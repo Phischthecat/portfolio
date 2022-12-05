@@ -1,0 +1,29 @@
+@import 'src/modules/typo/_typography.scss';
+@import 'src/modules/utilities/_vars.scss';
+
+nav {
+    padding: 30px 70px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: $background_clr;
+
+    img {
+        height: 50px;
+        width: auto;
+        cursor: pointer;
+    }
+    
+    mat-icon {
+        height: 50px;
+        width: 50px;
+        font-size: 36px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+}
