@@ -1,0 +1,59 @@
+@import 'src/modules/utilities/_button';
+@import 'src/modules/utilities/_vars';
+@import 'src/modules/typo/_typography';
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 110px 0;   
+
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        .text-container {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            p {
+                text-align: left;
+                margin-bottom: 50px;
+            }
+        }
+    
+        .img-container {
+            width: 50%;
+            display: flex;
+            justify-content: flex-end;
+
+            .img-wrapper {
+                height: 400px;
+                width: 400px;
+                position: relative;
+                
+                &:hover {
+                    &:after {
+                        content:  '';
+                        position: absolute;
+                        top: 10px;
+                        left: 10px;
+                        height: inherit;
+                        width: inherit;
+                        border: 4px solid black;
+                    }                    
+                }
+                
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    
+                }
+            }
+        }
+    }
+}

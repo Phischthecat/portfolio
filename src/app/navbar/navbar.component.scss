@@ -2,13 +2,14 @@
 @import 'src/modules/utilities/_vars.scss';
 
 nav {
-    padding: 30px 70px;
-    display: flex;
-    justify-content: space-between;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 100px;
     background-color: $background_clr;
 
     img {

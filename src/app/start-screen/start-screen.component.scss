@@ -1,0 +1,98 @@
+@import 'src/modules/utilities/_vars';
+@import 'src/modules/typo/_typography';
+
+.container {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        p {
+            font-family: $secondary_font, sans-serif;
+            font-weight: $fw-black;
+            font-size: $fs-headline;
+        }
+    
+        .subtitle {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0 30px;
+    
+            .horizontal-line {
+                border-top: 3px solid $primary_clr;
+                width: 100%;
+            }
+    
+            .my-name {
+                display: inline-block;
+                font-weight: $fw-600;
+                color: $secondary_clr;
+                white-space: nowrap;
+            }
+    }
+
+}
+.socials {
+    position: absolute;
+    bottom: 110px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  
+    
+    .email {
+        position: relative;
+        left: 0;        
+        
+        transform: rotate(-90deg) translateX(-20px);        
+        transform-origin: top left;
+    }
+
+    .call2action {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        
+        .img-container {
+            height: 200px;
+            overflow: hidden;
+            img {
+                animation: arrowDown 1.35s ease-in-out infinite forwards;
+            }
+        }
+
+        .text-container {
+            display: flex;
+            flex-direction: column;
+
+           div {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+    }
+}
+}
+
+@keyframes arrowDown {
+    from {
+        transform: translateY(-100px);
+    }
+    to {
+        transform: translateY(250px);
+
+    }
+}
