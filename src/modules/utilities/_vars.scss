@@ -14,20 +14,27 @@ $fw-800:800;
 $fw-black:900;
 
 // Font size
-$fs-xxs: 1.2em;
-$fs-xs: 1.4em;
-$fs-sm: 1.6em;
-$fs-md: 1.8em;
-$fs-lg: 2em;
-$fs-regular: 2.3em;
+$fs-xxs: 12px;
+$fs-xs: 14px;
+// $fs-sm: 16px;
+$fs-sm: 18px;
+$fs-md: 20px;
+$fs-regular: 23px;
+$fs-lg: 30px;
+$fs-xl: 37px;
+$fs-headline: 7vw;
+$fs-headline1: 5vw;
+$fs-headline2: 3vw;
 
 
 //color
-$background_clr: #F5F5F5;
+$background_clr: #fffcf3;
 $primary_clr: #000000; 
 $secondary_clr: #FF9900;
 $white: #fff;
+$subtle_grey: rgba(45, 45, 45, 0.2);
 
 //padding
-$padding-side: 0 150px;
+$padding-side: 0 10vw;
 $button-padding: 15px 30px 15px 30px;
+

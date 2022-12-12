@@ -26,7 +26,6 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            padding: 0 30px;
     
             .horizontal-line {
                 border-top: 3px solid $primary_clr;
@@ -69,7 +68,8 @@
             height: 200px;
             overflow: hidden;
             img {
-                animation: arrowDown 1.35s ease-in-out infinite forwards;
+                transform: translateY(-100px);
+                animation: arrowDown 1.35s ease-in-out 1s infinite forwards;
             }
         }
 

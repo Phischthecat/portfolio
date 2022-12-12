@@ -1,6 +1,6 @@
+@import 'modules/utilities/_vars';
+@import 'modules/typo/_typography';
 /* You can add global styles to this file, and also import other style files */
-@import 'src/modules/typo/_typography.scss';
-@import 'src/modules/utilities/_vars.scss';
 
 * {
     padding: 0;
@@ -14,21 +14,39 @@ body {
     background-color: $background_clr;
 }
 
-.btn {
-    padding: 20px 60px 20px 60px;
-    border: 4px solid $primary_clr;
-    background-color: $background_clr;
-    color: $primary_clr;
-    transition: all 225ms;
-    
-    &:hover {
-        font-weight: 900;
-        padding: 20px 75px 20px 75px;
-    }
-    &:focus {
-        background-color: $primary_clr;
-        color: $white;
+h1 {
+    font-family: $secondary_font;
+    font-weight: $fw-black;
+    font-size: $fs-headline1;
+    color: $secondary_clr;
+    margin-bottom: 7vh;
+    width: fit-content;
+    cursor: default;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+
+    &:before {
+        transition: height 0.5s ease;
+        content: attr(data-text);
+        position: absolute;
+        overflow: hidden;
+        height: 100px;
+        color: $primary_clr;
+        left: 0;
+        top: 0; 
     }
 
+    &:hover {
+        &:before {
+            height: 0;
+        }        
+    }
+}
+
+.white {
+    &:before {        
+        color: $white;         
+    }   
 }
 

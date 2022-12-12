@@ -1,0 +1,52 @@
+@import 'src/modules/utilities/_vars';
+@import 'src/modules/typo/_typography';
+
+.btn {
+    height: 75px;
+    width: 15vw;
+    max-width: 200px;
+    font-size: $fs-regular;
+    font-weight: $fw-regular;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    transition: all 150ms;
+
+    &:focus:enabled,
+    &:hover:enabled {
+        font-weight: 600;
+        width: 17vw;
+        max-width: 250px;
+    }
+
+    &:disabled {
+        opacity: 0.5;
+    }
+}
+
+.btn-black {
+    border: 4px solid $primary_clr;
+    background-color: $background_clr;
+    color: $primary_clr;
+    
+    &:focus:enabled,
+    &:hover:enabled {
+        background-color: $primary_clr;
+        color: $background_clr;
+    }
+}
+
+.btn-white {
+    border: 4px solid $background_clr;
+    background-color: $primary_clr;
+    color: $background_clr;
+    
+    &:focus:enabled,
+    &:hover:enabled {
+        background-color: $background_clr;
+        color: $primary_clr;
+    }
+}

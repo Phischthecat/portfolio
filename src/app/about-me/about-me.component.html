@@ -1,18 +1,23 @@
 <div class="container">
-  <h1>About me</h1>
+  <h1 #headline1 data-text="About me">About me</h1>
   <div class="wrapper">
-    <div class="text-container">
+    <div
+      class="text-container"
+      [ngStyle]="{ 'width.px': headline1.offsetWidth }"
+    >
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam assumenda
         amet commodi beatae aspernatur excepturi, iure cumque. Quam dolor odio
         recusandae doloremque commodi accusantium quaerat minus, nesciunt
         necessitatibus ab libero.
       </p>
-      <button class="btn btn-black">Let's talk</button>
+      <div class="btn-container">
+        <a href="#" class="btn btn-black">Let's talk</a>
+      </div>
     </div>
     <div class="img-container">
       <div class="img-wrapper">
-        <img src="./../../assets/img/photo.jpg" alt="photo of me" />
+        <img src="./../../assets/img/B22219_0017.jpg" alt="photo of me" />
       </div>
     </div>
   </div>

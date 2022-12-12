@@ -1,28 +1,59 @@
 <div class="container">
   <div class="header">
     <div class="header-wrapper">
-      <h1>Portfolio</h1>
-      <span
+      <h1 #headline1 data-text="Portfolio">Portfolio</h1>
+      <span [ngStyle]="{ 'width.px': headline1.offsetWidth }"
         >This page is a sample of my work - please feel free to try out.</span
       >
     </div>
   </div>
-  <div class="project">
-    <div class="img-container">
-      <div class="img-wrapper">
-        <img src="./../../assets/img/photo.jpg" alt="project" />
-      </div>
+  <div
+    class="project"
+    *ngFor="
+      let project of projects;
+      let i = index;
+      let odd = odd;
+      let even = even
+    "
+    [style.flexDirection]="even ? 'row' : 'row-reverse'"
+  >
+    <div class="number" [style]="even ? 'right: 0' : 'left: 0'">
+      0{{ i + 1 }} / 0{{ projects.length }}
     </div>
-    <div class="text-container">
-      <h2>Join</h2>
-      <span class="techs">Angular | TypeScript | HTML | CSS | Firebase</span>
+    <a href="{{ project.link }}" target="_blank" class="img-container">
+      <div class="img-wrapper" [ngClass]="even ? 'left' : 'right'">
+        <img src="./../../assets/img/{{ project.img }}" alt="project" />
+
+        <div class="circle-black">
+          <img
+            src="./../../assets/img/circle-with-arrow.svg"
+            alt="cirle with arrow"
+            [style]="
+              even
+                ? 'right: calc(0px - 10px - (70px/2));'
+                : 'left: calc(0px - 10px - (70px/2));'
+            "
+          />
+        </div>
+      </div>
+    </a>
+    <div
+      class="text-container"
+      [style.alignItems]="even ? 'flex-start' : 'flex-end'"
+    >
+      <h2>{{ project.name }}</h2>
+      <div class="techs">
+        <span *ngFor="let project_tech of project['techs']"
+          >{{ project_tech }}
+        </span>
+      </div>
       <span class="descripition">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione eius
-        fugiat cupiditate odio nam vero esse omnis, debitis.
+        {{ project.text }}
       </span>
       <div class="btn-container">
-        <button class="btn btn-black">Try out</button>
-        <button class="btn btn-white">Github</button>
+        <a href="{{ project.github }}" target="_blank" class="btn btn-black">
+          Github
+        </a>
       </div>
     </div>
   </div>

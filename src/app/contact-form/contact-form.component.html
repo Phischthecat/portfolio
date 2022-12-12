@@ -1,0 +1,75 @@
+<form class="contactForm" [formGroup]="contactForm">
+  <div class="input-box">
+    <input type="text" formControlName="name" />
+    <span>Name</span>
+  </div>
+  <div class="input-box">
+    <input type="email" formControlName="email" />
+    <span>Email</span>
+  </div>
+  <div class="input-box">
+    <textarea type="text" formControlName="message"></textarea>
+    <span>Your message</span>
+    <mat-error *ngIf="contactForm.controls['email'].invalid"
+      >Please enter a valid Email adress</mat-error
+    >
+  </div>
+
+  <!-- <mat-form-field appearance="outline">
+    <mat-label>Name</mat-label>
+    <input matInput type="text" name="name" formControlName="name" />
+    <mat-error *ngIf="contactForm.controls['name'].invalid"
+      >Please enter a name</mat-error
+    >
+  </mat-form-field> -->
+  <mat-form-field>
+    <mat-label [ngStyle]="{ color: 'white' }">Email</mat-label>
+    <input matInput type="email" name="email" formControlName="email" />
+    <mat-error *ngIf="contactForm.controls['email'].invalid"
+      >Please enter a valid Email adress</mat-error
+    >
+  </mat-form-field>
+  <!-- <mat-form-field appearance="outline">
+    <mat-label>Message</mat-label>
+    <mat-error *ngIf="contactForm.controls['message'].invalid"
+      >Please enter a message</mat-error
+    >
+    <textarea
+      matInput
+      type="text"
+      name="message"
+      formControlName="message"
+    ></textarea>
+  </mat-form-field> -->
+  <button
+    [disabled]="
+      !(contactForm.valid && (contactForm.dirty || contactForm.touched))
+    "
+    class="btn btn-white"
+    type="submit"
+  >
+    Senden
+  </button>
+</form>
+
+<!-- <p>
+  <mat-form-field appearance="outline">
+    <mat-label>Outline form field</mat-label>
+    <input matInput placeholder="Placeholder" />
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    <mat-hint>Hint</mat-hint>
+  </mat-form-field>
+</p> -->
+
+<!-- <form #myForm NgNativeValidate (submit)="sendMail()">
+  <input required type="text" name="name" #formName />
+  <textarea
+    required
+    type="text"
+    name="message"
+    cols="30"
+    rows="10"
+    #formEmail
+  ></textarea>
+  <button #formBtn>Send</button>
+</form> -->

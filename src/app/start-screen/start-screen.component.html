@@ -1,10 +1,8 @@
 <div class="container">
   <div class="wrapper">
-    <div #headline1>
-      <p>Frontend</p>
-    </div>
+    <p #headline1>Frontend</p>
     <p>Developer</p>
-    <div #subtitle class="subtitle">
+    <div class="subtitle" [ngStyle]="{ 'width.px': headline1.offsetWidth }">
       <div class="horizontal-line"></div>
       <span class="my-name">Phil Schmucker</span>
     </div>
