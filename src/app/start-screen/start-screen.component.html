@@ -1,19 +1,21 @@
 <div class="container">
   <div class="wrapper">
-    <p #headline1>Frontend</p>
-    <p>Developer</p>
-    <div class="subtitle" [ngStyle]="{ 'width.px': headline1.offsetWidth }">
+    <p [@slideInRight] class="content">Frontend</p>
+    <p [@slideInLeft]>Developer</p>
+    <div [@popUp] class="subtitle">
       <div class="horizontal-line"></div>
       <span class="my-name">Phil Schmucker</span>
     </div>
   </div>
   <div class="socials">
-    <div class="email">p.schmuck.er@web.de</div>
-    <div class="call2action">
+    <div [@slideInBottom] class="email">
+      <a href="#contact">p.schmuck.er@web.de</a>
+    </div>
+    <a href="#aboutMe" class="call2action">
       <div class="img-container">
         <img src="./../../assets/img/arrow.svg" alt="arrow" />
       </div>
-      <div class="text-container">
+      <div [@fadeIn] class="text-container">
         <div>
           <span>S</span>
           <span>c</span>
@@ -29,6 +31,6 @@
           <span>n</span>
         </div>
       </div>
-    </div>
+    </a>
   </div>
 </div>

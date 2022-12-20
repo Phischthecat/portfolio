@@ -6,25 +6,37 @@ nav {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 999;
+    z-index: 3;
     display: flex;
     justify-content: space-between;
-    padding: 30px 100px;
-    background-color: $background_clr;
-
-    img {
-        height: 50px;
-        width: auto;
-        cursor: pointer;
-    }
+    padding: $padding-side;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: $background_clr; 
     
-    mat-icon {
-        height: 50px;
-        width: 50px;
-        font-size: 36px;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
+
+    .hamBtn {
+        background-color: $background_clr;
+        border: none;
         cursor: pointer;
+        
+        .hamburger {
+            transition: translate 1s, rotate 1s;
+        }
+        
+        &[aria-expanded='true'] .hamburger {
+            translate: 7.5px -5px;
+            rotate: 0.125turn;
+        }
+        
+        .line {
+            transition: 0.75s ease-out;
+            stroke-dasharray: 60 31 60 31 60 300;
+        }
+        &[aria-expanded='true'] .line {
+            transition: 1.2s;
+            stroke-dasharray: 60 150 60 130 60 300;
+            stroke-dashoffset: -183;
+        }
     }
 }

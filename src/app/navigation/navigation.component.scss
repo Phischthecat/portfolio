@@ -1,0 +1,133 @@
+@import 'src/modules/typo/_typography.scss';
+@import 'src/modules/utilities/_vars.scss';
+
+.navigation {
+    $top: 110px;
+    position: fixed;
+    inset: 0;
+    top: $top;
+    z-index: 99;
+    height: calc(100vh - $top);
+    width: 100%;
+    background-color: $background_clr;   
+    
+    .section-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+        
+        .sections {
+            $line-height: 3px;
+            $line-length: 40px;
+            position: relative;
+            font-size: clamp(30px,$fs-headline1, 60px);
+            font-weight: $fw-black;
+            font-family: $secondary_font; 
+            padding: 20px 30px;
+            width: clamp(300px, 60%, 600px);
+            text-align: center;
+            cursor: pointer;
+
+            a {
+                text-decoration: none;
+                color: $primary_clr;
+            }
+            
+            &:before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                height: $line-length;
+                width: $line-height;
+                background-color: $primary_clr;
+                transition: height $onHover $delay;   
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                height: $line-height;
+                width: $line-length;
+                background-color: $primary_clr;
+                animation: underline-reverse $onHover ease-out forwards;
+            }
+
+            &:focus {
+                border: 3px solid $primary_clr !important;
+            }
+
+            &:hover {
+                &:before {
+                    height: 0;
+                }
+
+                &:after {
+                    animation: underline $onHover $delay ease-in forwards;
+                }
+
+                @keyframes underline {
+                    0% {
+                        width: $line-length;
+                    }
+                    50%{
+                        width: 100%;
+                    }
+                    100% {
+                        width: 225px;
+                        right: 0;
+                        left: unset;
+                    }
+                }
+                @keyframes underline-reverse {
+                    100% {
+                        width: $line-length;
+                    }
+                    50%{
+                        width: 100%;
+                    }
+                    0% {
+                        width: 225px;
+                        right: 0;
+                        left: unset;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .footer-nav {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 40%;
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding-bottom: 35px;
+        
+        &:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: $primary_clr;
+            clip-path: polygon(0 0, 100% 45%, 100% 100%, 0% 100%);
+            z-index: 2;
+        }   
+        
+        .content{
+            position: relative;
+            z-index: 3;
+            padding: $padding-side;            
+        }
+    }
+}

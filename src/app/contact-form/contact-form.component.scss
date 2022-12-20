@@ -3,58 +3,138 @@
 @import 'src/modules/typo/_typography';
 
 .contactForm {
-    width: 80vw;
+    width: 50vw;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    justify-content: center;
+    gap: 40px;
+    font-weight: $fw-300;
+    margin: 20px 0;
 
     
 
     
 
-    .input-box {
+    .inputBox {
+        $transitionTime: 150ms;
         position: relative;
-        width: 300px;
+        width: 100%;
+        textarea { 
+            resize: vertical; 
+            max-height: 300px; 
+            min-height: 200px; 
+        }
 
         input, textarea {
             width: 100%;
             padding: 10px;
-            border: 2px solid $background_clr;
+            border: 2px solid transparent;
+            border-bottom: 2px solid $background_clr;
             background-color: $primary_clr;
             color: $background_clr;
             outline: none;
-            font-size: $fs-regular;
-            transition: 0.6s;
+            font-size: $fs-md;
+            transition: $transitionTime;
+
+            &:hover {
+                border: 2px solid $background_clr;
+            }
+            
+            &:focus {
+                ~ span {
+                    transform: translateX(10px) translateY(-10px);
+                    font-size: $fs-sm;
+                    font-weight: $fw-600;
+                    padding: 0 10px;
+                    background-color: $primary_clr;
+                    letter-spacing: 5px;
+                    color: $background_clr;
+                }
+                &.ng-valid {
+                    border: 2px solid $background_clr;    
+                }
+
+                &.ng-invalid {
+                    border: 2px solid $red;
+                    color: $red; 
+
+                    ~ span {
+                        color: $red; 
+                    }
+                }
+            }
+
+            &.ng-touched, &.ng-dirty { 
+
+                &.ng-invalid {
+                    border-bottom: 2px solid $red;
+                    color: $red;
+    
+                    ~ span {
+                        color: $red;              
+                    }
+                    
+                    &:hover {
+                        border: 2px solid $red;    
+                    }    
+                }
+                &.ng-valid {
+                    border-bottom: 2px solid $background_clr;
+                    color: $background_clr;
+                    
+                    ~ span {
+                        color: $background_clr;
+                        transform: translateX(10px) translateY(-10px);
+                        font-size: $fs-sm;
+                        font-weight: $fw-600;
+                        padding: 0 10px;
+                        background-color: $primary_clr;
+                        letter-spacing: 5px;                        
+                    }
+                    
+                    &:hover {
+                        border: 2px solid $background_clr;    
+                    }    
+                }
+                
+            }
+
+            
 
             
         }
         
-        input:invalid ~ span,
-        input:focus ~ span {
-            color: blue;
-            transform: translateX(10px) translateY(-18px);
-            font-size: $fs-sm;
-            font-weight: $fw-600;
-            padding: 0 10px;
-        }
         
         span {
             position: absolute;
-            top: 10px;
-            left: 5px;
+            left: 0;
+            padding: 10px;
             font-size: $fs-regular;
-            background-color: $primary_clr;
             color: $background_clr;
             pointer-events: none;
-            transition: 0.6s;
-            
+            transition: $transitionTime;            
         }
     }
 
     
-    .error {
-        color: red;
+    .error{
+        color: $red;
+        font-size: $fs-xxs;
+        margin-top: 5px;
     }
 }
 
+.invalid-filled-input {
+    border: 2px solid $red !important;
+    
+    ~ span {
+        color: $background_clr;
+        transform: translateX(10px) translateY(-10px) !important;
+        font-size: $fs-sm !important;
+        font-weight: $fw-600;
+        padding: 0 10px !important;
+        background-color: $primary_clr;
+        letter-spacing: 5px;                        
+    }
+}

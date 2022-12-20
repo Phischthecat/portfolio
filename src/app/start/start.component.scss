@@ -1,0 +1,11 @@
+@import 'src/modules/utilities/_vars';
+
+section {
+    min-height: 100%;
+    width: 100%;
+    padding: $padding-side;
+    border: 1px solid black;
+}
+section:last-child {    
+    padding: 0;
+}

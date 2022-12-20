@@ -1,0 +1,17 @@
+<div class="navigation">
+  <!-- [@openClose]="isOpen ? false : true"  -->
+  <div class="section-container">
+    <div class="sections"><a href="#aboutMe">About me</a></div>
+    <div class="sections"><a href="#mySkills">My skills</a></div>
+    <div class="sections"><a href="#portfolio">Portfolio</a></div>
+  </div>
+  <!-- [@openCloseFooter]="isOpen ? false : true" -->
+  <div class="footer-nav">
+    <div class="content">
+      <a href="#contact">
+        <h1 class="white" [style.margin]="isOpen ? '0' : '7vh'">Say Hi!</h1>
+        <app-footer [isOpen]="isOpen" class="nav-footer"></app-footer>
+      </a>
+    </div>
+  </div>
+</div>

@@ -18,54 +18,71 @@
         .header-wrapper {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
-            overflow: auto;
+            align-items: center;
         }
     }
 
     .project {
         display: flex;        
-        gap: 100px;
+        gap: 5vw;
         margin: 100px 0;
         position: relative;
 
         .number {
             position: absolute;
             top: 0;
-            right: 0;
             font-family: $secondary_font;
             font-weight: $fw-black;
             font-size: $fs-headline2;
             color: $subtle_grey;
         }
 
-        .img-container {
-            height: 400px;
-            width: 600px;
+        .anchor {
+            $imgHeight: 400px;
+            $imgWidth: 600px;
+            height: 100%;
+            width: fit-content;
+            display: flex;
+            justify-content: flex-end;
 
             .img-wrapper {
                 height: 100%;
-                width: 100%;
+                width: fit-content;
                 position: relative;
+                z-index: 2;
                 
-                // &:hover {
                     img {
-                    height: 100%;
-                    width: 100%;
+                    height: $imgHeight;
+                    aspect-ratio: 4 / 3;
                     object-fit: cover;
-                }
+                    }
 
-                .circle-black {
-                    $width: 70px;
-                    $height: 70px; 
-                    img {
-                        height: $height;
-                        width: $width;
+                .frameWrapper {
+                    position: absolute;
+                    top: 0;
+                    height: $imgHeight;
+                    aspect-ratio: 4 / 3;
+
+                    .frame {
                         position: absolute;
-                        top: calc(50% + 10px - ($height/2));                        
-                        z-index: 1;
+                        top: 10px;
+                        height: 100%;
+                        width: 100%;
+                        border: $frame;
+                    }
+
+                    .circle-black {
+                        $size: 70px;
+                        img {
+                            height: $size;
+                            width: $size;
+                            position: absolute;
+                            top: calc(50% + 10px - ($size/2));
+                            z-index: 1;
+                        }
                     }
                 }
+
             }
         }
 
@@ -78,6 +95,7 @@
             justify-content: flex-end;
             padding-bottom: 5vh;
             gap: 15px;
+            z-index: 1;
 
             h2 {
                 font-family: $secondary_font;
@@ -101,31 +119,4 @@
             
         }
     }
-}
-
-.left {
-    &:after {
-        content:  '';
-        position: absolute;
-        top:0;
-        height: inherit;
-        width: inherit;
-        border: 4px solid black;
-        box-sizing: border-box;
-        top: 14px;
-        left: 14px;
-    }
-}
-.right {
-    &:after {
-        content:  '';
-        position: absolute;
-        top:0;
-        height: inherit;
-        width: inherit;
-        border: 4px solid black;
-        box-sizing: border-box;
-        top: 14px;
-        left: -14px;
-   }
 }

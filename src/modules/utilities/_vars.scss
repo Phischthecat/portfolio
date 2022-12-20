@@ -25,6 +25,7 @@ $fs-xl: 37px;
 $fs-headline: 7vw;
 $fs-headline1: 5vw;
 $fs-headline2: 3vw;
+$fs-headline3: 2vw;
 
 
 //color
@@ -32,9 +33,18 @@ $background_clr: #fffcf3;
 $primary_clr: #000000; 
 $secondary_clr: #FF9900;
 $white: #fff;
-$subtle_grey: rgba(45, 45, 45, 0.2);
+$subtle_grey: #2d2d2d33;
+$red: #E84855;
+$green: #44CF6C;
 
 //padding
 $padding-side: 0 10vw;
 $button-padding: 15px 30px 15px 30px;
+
+// animation time
+$onHover: 225ms;
+$delay: 150ms;
+
+//border
+$frame: 4px solid $primary_clr;
 

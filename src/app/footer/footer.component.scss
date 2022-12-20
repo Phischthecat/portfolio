@@ -1,0 +1,60 @@
+@import 'src/modules/utilities/_vars';
+@import 'src/modules/typo/_typography';
+
+:host{
+    display: block;    
+}
+
+.container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $primary_clr;
+    color: $background_clr;
+
+    .left-side {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 20px;
+
+        div {
+            display: flex;
+            gap: 10px;
+            pointer-events: none;
+        }
+    }
+
+
+    .right-side {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 20px;
+
+        .socials {
+            display: flex;
+            align-items: center;
+            gap: 5vw;
+
+            .socialIcon {
+                &:hover {
+                    filter: invert(57%) sepia(60%) saturate(998%) hue-rotate(358deg) brightness(100%) contrast(109%);
+                    transform: scale(1.1);
+                    transition: all 225ms ease-in-out alternate;
+                }
+            }
+        }
+
+        .legalNotice {
+            font-size: $fs-sm;
+            font-weight: $fw-300;
+            cursor: pointer;
+        }
+
+        
+    }
+}

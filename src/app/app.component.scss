@@ -1,11 +1,9 @@
 @import 'src/modules/utilities/_vars';
 
-section {
-    // height: 100vh;
-    width: 100%;
+section:last-child {
+    background-color: $primary_clr;
     padding: $padding-side;
-    border: 1px solid black;
+    padding-bottom: 110px;
 }
-section:last-child {    
-    padding: 0;
-}
+
+

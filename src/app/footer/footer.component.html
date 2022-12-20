@@ -1,1 +1,34 @@
-<p>footer works!</p>
+<div class="container">
+  <div class="left-side">
+    <a href="#">
+      <img
+        *ngIf="!isOpen"
+        class="logo"
+        src="./../../assets/img/logo_phisch_white.png"
+        alt="logo white"
+      />
+    </a>
+    <div *ngIf="!isOpen">
+      <mat-icon> copyright </mat-icon>
+      <span> Phil Schmucker 2022</span>
+    </div>
+    <div *ngIf="isOpen">
+      <span> p.schmuck.er@web.de</span>
+    </div>
+  </div>
+  <div class="right-side">
+    <div class="socials">
+      <a
+        *ngFor="let social of socials; let i = index"
+        href="https://www.google.com"
+        ><img
+          class="socialIcon"
+          src="./../../assets/img/socials/{{ social.logo }}"
+          alt="{{ social.name }}"
+      /></a>
+    </div>
+    <div class="legalNotice" *ngIf="!isOpen">
+      <a>Legal notice</a>
+    </div>
+  </div>
+</div>

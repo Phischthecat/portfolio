@@ -1,17 +1,8 @@
+<section class="nav">
+  <app-navigation [class.d-none]="!isOpen" [isOpen]="isOpen"></app-navigation>
+  <app-navbar (openNav)="navbarIsOpen($event)"></app-navbar>
+</section>
 <router-outlet></router-outlet>
-<section class="firstSection">
-  <app-navbar></app-navbar>
-  <app-start-screen></app-start-screen>
-</section>
-<section class="secondSection">
-  <app-about-me></app-about-me>
-</section>
-<section class="thirdSection">
-  <app-skills></app-skills>
-</section>
-<section class="fourthSection">
-  <app-portfolio></app-portfolio>
-</section>
-<section class="fifthSection">
-  <app-contact></app-contact>
+<section>
+  <app-footer></app-footer>
 </section>
