@@ -5,28 +5,31 @@
     $top: 110px;
     position: fixed;
     inset: 0;
-    top: $top;
-    z-index: 99;
-    height: calc(100vh - $top);
+    z-index: 5;
+    height: 100vh;
     width: 100%;
-    background-color: $background_clr;   
+    background-color: $background_clr;
+    
     
     .section-container {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        width: 100%;
+        height: calc(100% - 20%);
+        padding: $padding-side;
         
         
         .sections {
             $line-height: 3px;
             $line-length: 40px;
             position: relative;
-            font-size: clamp(30px,$fs-headline1, 60px);
+            font-size: $fs-headline1;
             font-weight: $fw-black;
             font-family: $secondary_font; 
             padding: 20px 30px;
-            width: clamp(300px, 60%, 600px);
+            width: clamp(220px, 100%, 1000px);
             text-align: center;
             cursor: pointer;
 
@@ -106,11 +109,8 @@
         left: 0;
         width: 100%;
         height: 40%;
-        z-index: 3;
         display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        padding-bottom: 35px;
+        align-items: flex-end;
         
         &:before {
             content: '';
@@ -127,7 +127,49 @@
         .content{
             position: relative;
             z-index: 3;
-            padding: $padding-side;            
+            width: 100%;
+            padding: $padding-side; 
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            color: $background_clr;
+
+            .left-side,.right-side {  
+                display: flex;              
+                padding-bottom: 50px;
+            }
+            
+            .left-side {
+                flex-direction: column;
+                 h1, span {
+                    cursor: pointer;
+                 }              
+            }
         }
+    }
+}
+
+@media screen and (max-width: 630px) {
+    .sections {
+        font-size: $fs-headline3 !important;
+    }
+    .content {
+        flex-direction: column;
+        align-items: flex-start !important; 
+
+        .left-side,.right-side {                
+            padding-bottom: 25px !important;
+        }
+
+        .right-side {
+            align-self: flex-end;
+        }
+
+    }
+}
+
+@media (max-width: 320px) and (min-width: 50px) {
+    .sections {
+        font-size: $fs-headline4 !important;
     }
 }

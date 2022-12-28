@@ -6,17 +6,19 @@
     position: relative;
     width: 100%;
     padding: $padding-side;
+    padding-top: 110px;
        
     &:before {
         content: '';
         position: absolute;
         inset: 0;
+        bottom: -1px;
         background-color: $primary_clr;
         clip-path: polygon(0 0, 100% 15%, 100% 100%, 0% 100%);
     }
 
     .header {
-        padding-top: 15vh;
+        padding-top: 10vh;
     }
 }
 
@@ -30,6 +32,7 @@ position: relative;
    gap: 25px;
 
    h2 {
+    font-size: $fs-headline2;
     color: $secondary_clr;
    }
 
@@ -91,4 +94,19 @@ position: relative;
             }          
         }
     }
+}
+
+@media (max-width: 630px) {
+    .arrow-up {
+        display: none;
+    }
+
+    .contact-container {
+        align-items: none;
+
+        h2, span {
+            text-align: center;
+        }
+    }
+
 }

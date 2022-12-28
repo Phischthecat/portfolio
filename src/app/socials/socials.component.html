@@ -1,0 +1,9 @@
+<a
+  *ngFor="let social of socials; let i = index"
+  target="{{ social.target }}"
+  href="{{ social.link }}"
+  ><img
+    class="socialIcon"
+    src="./../../assets/img/socials/{{ social.logo }}"
+    alt="{{ social.name }}"
+/></a>

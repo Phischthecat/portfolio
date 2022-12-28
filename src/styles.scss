@@ -2,18 +2,33 @@
 @import 'modules/typo/_typography';
 /* You can add global styles to this file, and also import other style files */
 
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
-    scroll-padding-top: 110px;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;
+    scroll-behavior: smooth;    
 }
 
 body {
     font-family: $primary_font , sans-serif;
     font-size: $fs-regular;
-    background-color: $background_clr;
+    background-color: $background_clr;    
+}
+
+@media (max-width: 630px) {
+    body {
+        font-size: $fs-sm !important;
+    }
 }
 
 .d-none {
@@ -31,15 +46,21 @@ h1 {
     display: inline-block;
     vertical-align: top;
     position: relative;
-
+    text-shadow: 0 0 $primary_clr;
+    transition: all 500ms ease-in-out;
+    
     &:hover  {
-        color: $secondary_clr;
-        transition: color 225ms ease-in-out;
+        color: $primary_clr;
+        text-shadow: $ts-offset calc($ts-offset/2) $secondary_clr;
     }
 }
 
 .white {      
-    color: $white;         
+    color: $background_clr;         
+    &:hover  {
+        color: $background_clr;
+        text-shadow: $ts-offset calc($ts-offset/2) $secondary_clr;
+    }
 }
 
 .logo {
@@ -53,3 +74,4 @@ h1 {
         transition: all 150ms ease-in-out;
     }
 }
+

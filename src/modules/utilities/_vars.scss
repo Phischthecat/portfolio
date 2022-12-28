@@ -16,30 +16,31 @@ $fw-black:900;
 // Font size
 $fs-xxs: 12px;
 $fs-xs: 14px;
-// $fs-sm: 16px;
 $fs-sm: 18px;
 $fs-md: 20px;
 $fs-regular: 23px;
 $fs-lg: 30px;
 $fs-xl: 37px;
-$fs-headline: 7vw;
-$fs-headline1: 5vw;
-$fs-headline2: 3vw;
-$fs-headline3: 2vw;
+$fs-headline:  calc(20px + 6vw); 
+$fs-headline1: clamp(26px, calc(18px + 5vw), 70px);
+$fs-headline2: calc(16px + 4vw);
+$fs-headline3: calc(14px + 3vw);
+$fs-headline4: calc(12px + 2vw);
 
+
+//offset text shadow
+$ts-offset: $fs-headline3;
 
 //color
 $background_clr: #fffcf3;
 $primary_clr: #000000; 
-$secondary_clr: #FF9900;
-$white: #fff;
-$subtle_grey: #2d2d2d33;
+$secondary_clr: #ff9900;
+$subtle_grey: #2d2d2d12;
 $red: #E84855;
 $green: #44CF6C;
 
 //padding
-$padding-side: 0 10vw;
-$button-padding: 15px 30px 15px 30px;
+$padding-side: 0 calc(20px + 5vw);
 
 // animation time
 $onHover: 225ms;
@@ -47,4 +48,12 @@ $delay: 150ms;
 
 //border
 $frame: 4px solid $primary_clr;
+
+$boxshadow: 
+    0px 0px 2.2px rgba(0, 0, 0, 0.066),
+    0px 0px 5.3px rgba(0, 0, 0, 0.08),
+    0px 0px 10px rgba(0, 0, 0, 0.088),
+    0px 0px 17.9px rgba(0, 0, 0, 0.096),
+    0px 0px 33.4px rgba(0, 0, 0, 0.109),
+    0px 0px 80px rgba(0, 0, 0, 0.17);
 

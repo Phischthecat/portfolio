@@ -1,6 +1,6 @@
 <section class="nav">
-  <app-navigation [class.d-none]="!isOpen" [isOpen]="isOpen"></app-navigation>
-  <app-navbar (openNav)="navbarIsOpen($event)"></app-navbar>
+  <app-navigation *ngIf="this.menu.isOpen" [@childAnimation]></app-navigation>
+  <app-navbar></app-navbar>
 </section>
 <router-outlet></router-outlet>
 <section>

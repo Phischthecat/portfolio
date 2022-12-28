@@ -1,17 +1,25 @@
 <div class="navigation">
-  <!-- [@openClose]="isOpen ? false : true"  -->
-  <div class="section-container">
-    <div class="sections"><a href="#aboutMe">About me</a></div>
-    <div class="sections"><a href="#mySkills">My skills</a></div>
-    <div class="sections"><a href="#portfolio">Portfolio</a></div>
+  <div [@openClose] class="section-container">
+    <div class="sections">
+      <div (click)="moveTo('aboutMe')">About me</div>
+    </div>
+    <div class="sections">
+      <div (click)="moveTo('mySkills')">My skills</div>
+    </div>
+    <div class="sections">
+      <div (click)="moveTo('portfolio')">Portfolio</div>
+    </div>
   </div>
-  <!-- [@openCloseFooter]="isOpen ? false : true" -->
-  <div class="footer-nav">
+
+  <div class="footer-nav" [@openCloseFooter]>
     <div class="content">
-      <a href="#contact">
-        <h1 class="white" [style.margin]="isOpen ? '0' : '7vh'">Say Hi!</h1>
-        <app-footer [isOpen]="isOpen" class="nav-footer"></app-footer>
-      </a>
+      <div class="left-side">
+        <h1 (click)="moveTo('contact')" class="white">Say Hi!</h1>
+        <span (click)="moveTo('contact')">p.schmuck.er@web.de</span>
+      </div>
+      <div class="right-side">
+        <app-socials></app-socials>
+      </div>
     </div>
   </div>
 </div>

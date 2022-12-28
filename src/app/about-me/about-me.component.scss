@@ -14,6 +14,7 @@
     .wrapper {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         gap: 10%;
 
         .text-container {
@@ -33,29 +34,71 @@
         justify-content: flex-end;
 
         .img-wrapper {
-            $img-size: 50vh;                                
-            position: relative;
+            $img-size: clamp(300px, 30vw, 500px);   
+            $aspect-ratio: 1 / 1;                             
+            position: relative; 
             
-            &:hover {
-                &:after {
-                content:  '';
+            .frame {
+                $offset: 10px;
                 position: absolute;
-                top: 15px;
-                left: 15px;
-                height: $img-size;
+                top: $offset;
+                left: $offset;
                 width: $img-size;
+                aspect-ratio: $aspect-ratio;
                 border: $frame;
-                box-sizing: border-box;
-                }                    
+                opacity: 0;
+                
+                &:hover {
+                    opacity: 1;
+                    transition: opacity 225ms ease-in-out;
+                }
             }
-            
             
             img {
                 width: $img-size;
-                height: $img-size;
-                object-fit: cover;
-                
+                aspect-ratio: $aspect-ratio;
+                object-fit: cover;     
+                box-shadow: $boxshadow;    
             }
         }
     }
+}
+
+@media (max-width:875px) {
+    .container {
+
+        .wrapper {
+            flex-direction: column;
+
+            .text-container {
+                button {
+                    display: none;
+                }
+            }
+            
+            .img-container {
+                .img-wrapper {
+                    $img-size: clamp(250px, 100%, 875px);   
+                    $aspect-ratio: 16 / 9; 
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    
+                    .frame {                   
+                        width: $img-size;
+                        aspect-ratio: $aspect-ratio;                    
+                    }
+                    
+                    img {
+                        width: $img-size;
+                        aspect-ratio: $aspect-ratio;
+                        margin-bottom: 50px; 
+                        object-fit: cover;
+                        object-position: top;
+                        
+                    }
+                }
+            }
+        }
+    }  
 }

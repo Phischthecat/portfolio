@@ -2,9 +2,9 @@
 @import 'src/modules/typo/_typography';
 
 .btn {
+    $btn-width: clamp(100px, 15vw, 200px);
     height: 75px;
-    width: 15vw;
-    max-width: 200px;
+    width: $btn-width;
     font-size: $fs-regular;
     font-weight: $fw-regular;
     text-decoration: none;
@@ -12,14 +12,16 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-
     transition: all 150ms;
 
-    &:focus,
+    & > * {
+        text-decoration: none;
+        color: inherit;
+    }
+
     &:hover {
         font-weight: 600;
-        width: 17vw;
-        max-width: 250px;
+        width: calc($btn-width * 1.15);
     }
 
     &:disabled {
@@ -29,7 +31,7 @@
 }
 
 .btn-black {
-    border: 4px solid $primary_clr;
+    border: $frame;
     background-color: $background_clr;
     color: $primary_clr;
     

@@ -10,15 +10,16 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ContactComponent } from './contact/contact.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatIconModule } from '@angular/material/icon';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { FooterComponent } from './footer/footer.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatSelectModule} from '@angular/material/select';
 import { NavigationComponent } from './navigation/navigation.component';
 import { StartComponent } from './start/start.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
+import { SocialsComponent } from './socials/socials.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { StartComponent } from './start/start.component';
     ContactFormComponent,
     FooterComponent,
     NavigationComponent,
-    StartComponent
+    StartComponent,
+    SocialsComponent
   ],
   imports: [
     BrowserModule,

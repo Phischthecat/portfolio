@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component } from '@angular/core';
 import {
   trigger,
   state,
@@ -45,10 +45,11 @@ import {
     
   ]
 })
-export class StartScreenComponent implements OnInit {
+export class StartScreenComponent {
+  constructor() {}    
 
-  ngOnInit(): void {
-    
-  }  
+  moveTo(section) {
+    document.location = '#' + section;
+  }
 
 }

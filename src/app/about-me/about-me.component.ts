@@ -14,5 +14,8 @@ export class AboutMeComponent implements OnInit {
     
   }
 
+  moveTo(section) {
+    document.location = '#' + section;
+  }
 
 }

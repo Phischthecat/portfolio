@@ -33,21 +33,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: flex-end;
-        gap: 20px;
-
-        .socials {
-            display: flex;
-            align-items: center;
-            gap: 5vw;
-
-            .socialIcon {
-                &:hover {
-                    filter: invert(57%) sepia(60%) saturate(998%) hue-rotate(358deg) brightness(100%) contrast(109%);
-                    transform: scale(1.1);
-                    transition: all 225ms ease-in-out alternate;
-                }
-            }
-        }
+        gap: 20px;        
 
         .legalNotice {
             font-size: $fs-sm;
@@ -56,5 +42,19 @@
         }
 
         
+    }
+}
+
+@media (max-width: 630px) { 
+    .container {
+        padding-top: 50px;
+        flex-direction: column-reverse;
+        justify-content: center;
+        gap: 20px;
+
+        .left-side, .right-side {
+            align-items: center;
+            width: 100%;
+        }       
     }
 }

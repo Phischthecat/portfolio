@@ -1,21 +1,30 @@
+import { animate, animateChild, query, state, style, transition, trigger } from '@angular/animations';
 import { Component} from '@angular/core';
+import { IsOpenService } from './is-open.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  animations: [ 
+    trigger('childAnimation', [
+      transition('* => void', [
+        query("@*", [animateChild()], {optional: true})
+      ]),
+    ])
+  ]
 })
 export class AppComponent  {
-  
-  isOpen: boolean = false;
 
-  navbarIsOpen(isNavOpen: string) {
-    if(isNavOpen === 'true') {
-      this.isOpen = false;
-      document.body.style.overflow = 'auto';
+  constructor(public menu : IsOpenService){}
+
+  navbarIsOpen() {
+    if(this.menu.isOpen) {
+        this.menu.isOpen = false;
+        document.body.style.overflow = 'auto';
     } else {
-      this.isOpen = true;
-      document.body.style.overflow = 'hidden';
+        this.menu.isOpen = true;
+        document.body.style.overflow = 'hidden';
     }
   } 
 }

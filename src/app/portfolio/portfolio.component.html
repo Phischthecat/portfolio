@@ -14,33 +14,40 @@
     (mouseleave)="changeMouseState('rest', i)"
     [style.flexDirection]="even ? 'row' : 'row-reverse'"
   >
-    <div class="number" [style]="even ? 'right: 0' : 'left: 0'">
+    <div
+      [@colorUp]="project.state"
+      class="number"
+      [style]="even ? 'right: 0' : 'left: 0'"
+    >
       0{{ i + 1 }} / 0{{ projects.length }}
     </div>
-    <a href="{{ project.link }}" target="_blank" class="anchor">
-      <div class="img-wrapper">
-        <img
-          [@grayscale]="project.state"
-          src="./../../assets/img/{{ project.img }}"
-          alt="project"
-        />
-        <div class="frameWrapper" [style]="even ? 'left: 0' : 'right: 0'">
-          <div
-            [@frame]="project.state"
-            class="frame"
-            [style]="even ? 'left: 10px' : 'right: 10px'"
-          ></div>
+    <div class="img-wrapper">
+      <img
+        [@grayscale]="project.state"
+        class="project-img"
+        src="./../../assets/img/{{ project.img }}"
+        alt="project"
+      />
+      <div class="frameWrapper">
+        <div
+          [@frame]="project.state"
+          class="frame"
+          [style]="even ? 'left: 10px' : 'right: 10px'"
+        ></div>
+        <a href="{{ project.link }}" target="_blank" class="anchor">
           <div class="circle-black">
             <img
+              #arrow
               [@circle]="project.state"
+              class="circle-img"
               src="./../../assets/img/circle-with-arrow.svg"
               alt="cirle with arrow"
-              [style]="even ? 'right: -45px' : 'left: -45px'"
+              [style]="even ? positionArrowRight() : positionArrowLeft()"
             />
           </div>
-        </div>
+        </a>
       </div>
-    </a>
+    </div>
     <div
       *ngIf="even"
       [@text-left]="project.state"
