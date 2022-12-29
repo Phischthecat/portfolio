@@ -1,5 +1,6 @@
+import { TmplAstBoundText } from '@angular/compiler';
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-contact-form',
@@ -7,6 +8,11 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./contact-form.component.scss']
 })
 export class ContactFormComponent {
+  @ViewChild('myForm') myForm!: ElementRef;
+  @ViewChild('formName') formName!: any;
+  @ViewChild('formEmail') formEmail!: any;
+  @ViewChild('formMessage') formMessage!: any;
+  @ViewChild('formBtn') formBtn!: any;
 
 public contactForm: FormGroup;
 
@@ -15,34 +21,35 @@ public contactForm: FormGroup;
       name:['',[Validators.required,],[]],
       email: ['',[Validators.required, Validators.email],[]],
       message: ['',[Validators.required],[]],
-    });
-    
+    });    
+  }  
+
+  playAudio(){
+    let audio = new Audio();
+    audio.src = "assets/sound/swish.mp3";
+    audio.load();
+    audio.play();
   }
-
-
   
-@ViewChild('myForm') myForm!: any;
-@ViewChild('formName') formName!: any;
-@ViewChild('formEmail') formEmail!: any;
-@ViewChild('formBtn') formBtn!: any;
-
   async sendMail() {
-    // action="https://phil-schmucker.developerakademie.net/send_mail/send_mail.php"
-    console.log('Sending mail', this.myForm);
-    this.formName.nativeElement.disabled = true;
-    this.formEmail.nativeElement.disabled = true;
-    this.formBtn.nativeElement.disabled = true;
-    // Animation triggern: Email wird gesendet
-
+    this.toggleInputFields(true);
+    
     let fd = new FormData();
     fd.append('name', this.formName.nativeElement.value);
-    fd.append('message', this.formEmail.nativeElement.value);
+    fd.append('email', this.formEmail.nativeElement.value);
+    fd.append('message', this.formMessage.nativeElement.value);
     await fetch("https://phil-schmucker.developerakademie.net/send_mail/send_mail.php", {method: 'POST', body: fd});
+    this.playAudio();
     
-    this.formName.nativeElement.disabled = false;
-    this.formEmail.nativeElement.disabled = false;
-    this.formBtn.nativeElement.disabled = false;
-    // Animation stoppen / Text anzeigen 'Nachricht gesendet'
+    this.toggleInputFields(false);
+    this.myForm.nativeElement.reset();
+  }
+
+  toggleInputFields(boolean) {
+    this.formName.nativeElement.disabled = boolean;
+    this.formEmail.nativeElement.disabled = boolean;
+    this.formMessage.nativeElement.disabled = boolean;
+    this.formBtn.nativeElement.disabled = boolean;
   }
 
 }

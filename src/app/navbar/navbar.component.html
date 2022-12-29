@@ -1,7 +1,11 @@
 <nav>
   <a href="#">
-    <img class="logo" src="./../../assets/img/logo_phisch_black.png" alt="" />
+    <img class="logo" src="assets/img/logo_phisch_black.png" alt="" />
   </a>
+  <div *ngIf="menu.isOpen" [@openClose] class="lang-container">
+    <span class="lang de" (click)="changeLang('de')">DE</span>
+    <span class="lang en" (click)="changeLang('en')">EN</span>
+  </div>
   <button
     #hamBtn
     class="hamBtn"

@@ -28,7 +28,7 @@
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;           
-            gap: 30px;
+            gap: 10px;
             padding: $padding;
             border: $frame;
             margin-top: calc($padding * -1);
@@ -36,6 +36,7 @@
         
         .skill {
             width: 150px;
+            height: 150px;
             display: flex;
             flex-direction: column;
             justify-content: center;

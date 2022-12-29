@@ -1,5 +1,6 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit, HostListener } from '@angular/core';
+import { ChooseLangService } from '../choose-lang.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -72,12 +73,15 @@ import { Component, OnInit, HostListener } from '@angular/core';
   ],
 })
 export class PortfolioComponent implements OnInit {
+
+  constructor(public lang: ChooseLangService) {}
   
   public projects = [
     {
       name: 'Join',
       techs: ['Javascript |', 'HTML |', 'CSS'],
-      text: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
+      text: {'en': 'A task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
+              'de': 'Ein Aufgabenmanager nach dem Vorbild des Kanban-Systems. Erstellen und organisieren Sie Aufgaben mit Hilfe von Drag-and-Drop-Funktionen und weisen Sie ihnen Nutzer und Kategorien zu.'},
       github: 'https://github.com/Phischthecat/Join---Kanban-Board',
       link:'https://phil-schmucker.developerakademie.net/join',
       img: 'join-view.png',
@@ -86,7 +90,8 @@ export class PortfolioComponent implements OnInit {
     {
       name: 'Sharkie',
       techs: ['OOP |', 'JavaScript |', 'HTML |', 'CSS'],
-      text: 'A simple Jump-n-Run game based on an object-oriented approach. Help sharkie to find coins and poison bottles to fight against the killer whale.',
+      text: {'en': 'A simple Jump-n-Run game based on an object-oriented approach. Help sharkie to find coins and poison bottles to fight against the killer whale.',
+              'de': 'Ein einfaches Jump-n-Run-Spiel, das auf einem objektorientierten Ansatz basiert. Hilf Sharkie, Münzen und Giftflaschen zu finden, um gegen den Killerwal zu kämpfen.'},
       github: 'https://github.com/Phischthecat/Sharkie',
       link:'https://phil-schmucker.developerakademie.net/sharkie',
       img: 'sharkie-view.png',
@@ -95,7 +100,8 @@ export class PortfolioComponent implements OnInit {
     {
       name: 'Portfolio',
       techs: ['Angular |', 'TypeScript |', 'HTML |', 'CSS |', 'Material Design'],
-      text: 'Do you like my portfolio website? I built it with Angular. For the animations i used Angular animations.',
+      text: {'en': 'Do you like my portfolio website? Feel free to take a look behind the scenes on Github.',
+              'de': 'Gefällt Ihnen meine Portfolio-Website? Werfen Sie auf Github gerne einen Blick hinter die Kulissen.'},
       github: 'https://github.com/Phischthecat/portfolio',
       link:'#',
       img: 'portfolio-view.png',
@@ -104,7 +110,8 @@ export class PortfolioComponent implements OnInit {
     {
       name: 'Pokédex',
       techs: ['JavaScript |', 'HTML |', 'CSS |', 'API'],
-      text: 'Based on the PokéApi a simple libary that provides and catalogues pokemon information.',
+      text: {'en': 'Based on the PokéApi a simple libary that provides and catalogues pokemon information.',
+              'de': 'Eine einfache Bibliothek basierend auf der PokéApi, die Pokemon-Informationen bereitstellt und katalogisiert.'},
       github: 'https://github.com/Phischthecat/pokedex',
       link:'https://phil-schmucker.developerakademie.net/pokedex/',
       img: 'pokedex-view.png',

@@ -35,7 +35,7 @@
 
         .img-wrapper {
             $img-size: clamp(300px, 30vw, 500px);   
-            $aspect-ratio: 1 / 1;                             
+            $aspect-ratio: 1;                             
             position: relative; 
             
             .frame {

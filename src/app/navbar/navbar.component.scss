@@ -1,5 +1,5 @@
-@import 'src/modules/typo/_typography.scss';
-@import 'src/modules/utilities/_vars.scss';
+@import 'src/modules/utilities/_vars';
+@import 'src/modules/typo/_typography';
 
 nav {
     position: fixed;
@@ -13,6 +13,22 @@ nav {
     padding-top: 30px;
     padding-bottom: 30px;
     background-color: $background_clr; 
+
+    .lang-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+
+        .lang {
+            font-family: $secondary_font;
+            font-weight: $fw-black;
+        }
+
+        .checked {
+            text-shadow: 2px 2px 2px $secondary_clr;
+        }
+    }
     
 
     .hamBtn {

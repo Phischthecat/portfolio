@@ -1,5 +1,6 @@
-import { animate, animateChild, query, state, style, transition, trigger } from '@angular/animations';
+import { animateChild, query, transition, trigger } from '@angular/animations';
 import { Component} from '@angular/core';
+import {TranslateService} from '@ngx-translate/core';
 import { IsOpenService } from './is-open.service';
 
 @Component({
@@ -16,7 +17,10 @@ import { IsOpenService } from './is-open.service';
 })
 export class AppComponent  {
 
-  constructor(public menu : IsOpenService){}
+  constructor(public menu : IsOpenService, public translate: TranslateService){
+     // the lang to use, if the lang isn't available, it will use the current loader to get them
+    translate.use('en');
+}
 
   navbarIsOpen() {
     if(this.menu.isOpen) {

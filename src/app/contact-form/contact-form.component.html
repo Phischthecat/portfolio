@@ -1,7 +1,12 @@
-<form class="contactForm" [formGroup]="contactForm" (submit)="sendMail()">
+<form
+  class="contactForm"
+  [formGroup]="contactForm"
+  (submit)="sendMail()"
+  #myForm
+>
   <div class="inputBox">
-    <input type="text" formControlName="name" />
-    <span>Your name</span>
+    <input type="text" formControlName="name" name="name" #formName />
+    <span translate>Your name</span>
     <ng-container
       *ngIf="
         contactForm.controls['name'].dirty ||
@@ -9,20 +14,21 @@
       "
     >
       <div *ngIf="contactForm.controls['name'].errors?.['required']">
-        <p class="error">Please enter your name</p>
+        <p class="error" translate>Please enter your name</p>
       </div>
     </ng-container>
   </div>
   <div class="inputBox">
     <input
-      #email
+      #formEmail
       type="text"
+      name="email"
       formControlName="email"
       [class.invalid-filled-input]="
-        email.value.length > 0 && !contactForm.controls['email'].valid
+        formEmail.value.length > 0 && !contactForm.controls['email'].valid
       "
     />
-    <span>Your email</span>
+    <span translate>Your email</span>
     <ng-container
       *ngIf="
         contactForm.controls['email'].dirty ||
@@ -30,15 +36,20 @@
       "
     >
       <ng-container>
-        <p class="error" *ngIf="contactForm.controls['email'].errors">
+        <p class="error" *ngIf="contactForm.controls['email'].errors" translate>
           Please enter your e-mail address
         </p>
       </ng-container>
     </ng-container>
   </div>
   <div class="inputBox">
-    <textarea type="text" formControlName="message"></textarea>
-    <span>Your message</span>
+    <textarea
+      type="text"
+      formControlName="message"
+      name="message"
+      #formMessage
+    ></textarea>
+    <span translate>Your message</span>
     <ng-container
       *ngIf="
         contactForm.controls['message'].dirty ||
@@ -48,6 +59,7 @@
       <p
         class="error"
         *ngIf="contactForm.controls['message'].errors?.['required']"
+        translate
       >
         Please enter a message for me
       </p>
@@ -60,7 +72,9 @@
     "
     class="btn btn-white"
     type="submit"
+    #formBtn
+    translate
   >
-    Senden
+    Send
   </button>
 </form>

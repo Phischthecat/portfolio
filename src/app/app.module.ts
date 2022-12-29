@@ -20,7 +20,14 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { SocialsComponent } from './socials/socials.component';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {HttpClientModule, HttpClient} from '@angular/common/http';
+import { LegalNoticeComponent } from './legal-notice/legal-notice.component';
 
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -35,7 +42,8 @@ import { SocialsComponent } from './socials/socials.component';
     FooterComponent,
     NavigationComponent,
     StartComponent,
-    SocialsComponent
+    SocialsComponent,
+    LegalNoticeComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +54,16 @@ import { SocialsComponent } from './socials/socials.component';
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
-    MatSelectModule
+    MatSelectModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      defaultLanguage: 'en',
+      loader: {
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient]
+      }
+  })
   ],
   providers: [],
   bootstrap: [AppComponent]

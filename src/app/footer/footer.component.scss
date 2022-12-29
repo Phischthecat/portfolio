@@ -12,6 +12,7 @@
     justify-content: space-between;
     background-color: $primary_clr;
     color: $background_clr;
+    padding-top: 15px;
 
     .left-side {
         display: flex;
@@ -39,6 +40,10 @@
             font-size: $fs-sm;
             font-weight: $fw-300;
             cursor: pointer;
+            a {
+                text-decoration: none;
+                color: $background_clr;
+            }
         }
 
         

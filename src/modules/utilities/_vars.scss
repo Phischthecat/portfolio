@@ -11,7 +11,7 @@ $fw-500:500;
 $fw-600:600;
 $fw-bold:700;
 $fw-800:800;
-$fw-black:900;
+$fw-black:800;
 
 // Font size
 $fs-xxs: 12px;
@@ -23,9 +23,9 @@ $fs-lg: 30px;
 $fs-xl: 37px;
 $fs-headline:  calc(20px + 6vw); 
 $fs-headline1: clamp(26px, calc(18px + 5vw), 70px);
-$fs-headline2: calc(16px + 4vw);
-$fs-headline3: calc(14px + 3vw);
-$fs-headline4: calc(12px + 2vw);
+$fs-headline2: clamp(24px, calc(16px + 4vw), 65px);
+$fs-headline3: clamp(22px, calc(14px + 3vw), 60px);
+$fs-headline4: clamp(20px, calc(12px + 2vw), 55px);
 
 
 //offset text shadow

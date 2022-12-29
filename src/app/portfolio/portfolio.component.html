@@ -2,7 +2,7 @@
   <div class="header">
     <div class="header-wrapper">
       <h1 data-text="Portfolio">Portfolio</h1>
-      <span
+      <span translate
         >This page is a sample of my work - please feel free to try out.</span
       >
     </div>
@@ -25,7 +25,7 @@
       <img
         [@grayscale]="project.state"
         class="project-img"
-        src="./../../assets/img/{{ project.img }}"
+        src="assets/img/{{ project.img }}"
         alt="project"
       />
       <div class="frameWrapper">
@@ -40,7 +40,7 @@
               #arrow
               [@circle]="project.state"
               class="circle-img"
-              src="./../../assets/img/circle-with-arrow.svg"
+              src="assets/img/circle-with-arrow.svg"
               alt="cirle with arrow"
               [style]="even ? positionArrowRight() : positionArrowLeft()"
             />
@@ -61,7 +61,7 @@
         </span>
       </div>
       <span class="descripition">
-        {{ project.text }}
+        {{ project.text[lang.choosenLang] }}
       </span>
       <div class="btn-container">
         <a href="{{ project.github }}" target="_blank" class="btn btn-black">
@@ -82,7 +82,7 @@
         </span>
       </div>
       <span class="descripition">
-        {{ project.text }}
+        {{ project.text[lang.choosenLang] }}
       </span>
       <div class="btn-container">
         <a href="{{ project.github }}" target="_blank" class="btn btn-black">
