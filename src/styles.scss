@@ -1,5 +1,5 @@
 @import 'modules/utilities/_vars';
-@import 'modules/typo/typography';
+@import 'assets/fonts/typography';
 /* You can add global styles to this file, and also import other style files */
 * {
     padding: 0;
@@ -65,11 +65,16 @@ h1 {
     height: 50px;
     width: auto;
     cursor: pointer;
+    transition: all 150ms ease-in-out;
 
     &:hover {
         filter: invert(57%) sepia(60%) saturate(998%) hue-rotate(358deg) brightness(100%) contrast(109%);
         transform: scale(1.1);
-        transition: all 150ms ease-in-out;
+    }
+
+    @media (max-width: 450px) {
+        height: 35px;
+            
     }
 }
 

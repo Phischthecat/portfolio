@@ -1,5 +1,5 @@
 @import 'src/modules/utilities/_vars';
-@import 'src/modules/typo/_typography';
+@import 'src/assets/fonts/_typography';
 
 nav {
     position: fixed;
@@ -9,6 +9,7 @@ nav {
     z-index: 5;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: $padding-side;
     padding-top: 30px;
     padding-bottom: 30px;
@@ -23,10 +24,15 @@ nav {
         .lang {
             font-family: $secondary_font;
             font-weight: $fw-black;
+            cursor: pointer;
         }
 
         .checked {
             text-shadow: 2px 2px 2px $secondary_clr;
+        }
+
+        @media (max-width: 350px) {
+            flex-direction: column;
         }
     }
     
@@ -56,3 +62,4 @@ nav {
         }
     }
 }
+

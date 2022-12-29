@@ -13,8 +13,8 @@
   </div>
   <div class="right-side">
     <app-socials></app-socials>
-    <div class="legalNotice">
-      <a href="legal-notice" translate>Legal notice</a>
+    <div (click)="scrollToStart()" class="legalNotice">
+      <a routerLink="/legal-notice" translate>Legal notice</a>
     </div>
   </div>
 </div>

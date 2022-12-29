@@ -10,7 +10,9 @@ export class FooterComponent {
 
   constructor(public menu : IsOpenService){}
 
-  
+  scrollToStart() {   
+    window.scrollTo(0, 0);    
+  }
 
  
 }

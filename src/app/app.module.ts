@@ -26,7 +26,7 @@ import {HttpClientModule, HttpClient} from '@angular/common/http';
 import { LegalNoticeComponent } from './legal-notice/legal-notice.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @NgModule({

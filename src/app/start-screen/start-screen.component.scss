@@ -1,6 +1,6 @@
 @import 'src/modules/utilities/_vars';
 @import 'src/modules/utilities/_button';
-@import 'src/modules/typo/_typography';
+@import 'src/assets/fonts/_typography';
 
 .container {
     position: relative;    
@@ -49,6 +49,8 @@
         .mobile-btn {
             display: none;
             padding: 8px 12px;
+            font-family: $primary_font;
+            font-size: $fs-regular;
         }
 
 }
@@ -155,6 +157,7 @@ a {
         width: $width;
         margin-top: 5vh;
         z-index: 3;
+        font-size: $fs-md !important;
         
         &:hover {
             width: calc($width + 10%);
