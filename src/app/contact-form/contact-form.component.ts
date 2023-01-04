@@ -38,7 +38,7 @@ public contactForm: FormGroup;
     fd.append('name', this.formName.nativeElement.value);
     fd.append('email', this.formEmail.nativeElement.value);
     fd.append('message', this.formMessage.nativeElement.value);
-    await fetch("https://phil-schmucker.developerakademie.net/send_mail/send_mail.php", {method: 'POST', body: fd});
+    await fetch("https://philschmucker.de/send_mail/send_mail.php", {method: 'POST', body: fd});
     this.playAudio();
     
     this.toggleInputFields(false);
