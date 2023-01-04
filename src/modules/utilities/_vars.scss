@@ -16,16 +16,17 @@ $fw-black:800;
 // Font size
 $fs-xxs: 12px;
 $fs-xs: 14px;
+$fs-s: 16px;
 $fs-sm: 18px;
 $fs-md: 20px;
-$fs-regular: 23px;
+$fs-regular: 22px;
 $fs-lg: 30px;
 $fs-xl: 37px;
 $fs-headline:  calc(20px + 6vw); 
-$fs-headline1: clamp(26px, calc(18px + 5vw), 70px);
-$fs-headline2: clamp(24px, calc(16px + 4vw), 65px);
-$fs-headline3: clamp(22px, calc(14px + 3vw), 60px);
-$fs-headline4: clamp(20px, calc(12px + 2vw), 55px);
+$fs-headline1: clamp($fs-regular, calc($fs-sm + 3vw), 65px);
+$fs-headline2: clamp($fs-md, calc($fs-s + 3vw), 60px);
+$fs-headline3: clamp($fs-sm, calc($fs-xs + 2vw), 55px);
+$fs-headline4: clamp($fs-s, calc($fs-xxs + 1vw), 50px);
 
 
 //offset text shadow
@@ -49,6 +50,7 @@ $delay: 150ms;
 //border
 $frame: 4px solid $primary_clr;
 
+//boxshadow
 $boxshadow: 
     0px 0px 2.2px rgba(0, 0, 0, 0.066),
     0px 0px 5.3px rgba(0, 0, 0, 0.08),
@@ -56,4 +58,5 @@ $boxshadow:
     0px 0px 17.9px rgba(0, 0, 0, 0.096),
     0px 0px 33.4px rgba(0, 0, 0, 0.109),
     0px 0px 80px rgba(0, 0, 0, 0.17);
+
 

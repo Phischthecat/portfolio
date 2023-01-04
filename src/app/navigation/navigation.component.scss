@@ -111,6 +111,11 @@
         height: 35%;
         display: flex;
         align-items: flex-end;
+        transition: all 225ms;
+        
+        @media (max-width:630px) {
+            height: 45%;
+        }
         
         &:before {
             content: '';
