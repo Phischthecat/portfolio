@@ -83,7 +83,7 @@ export class PortfolioComponent implements OnInit {
       text: {'en': 'A task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
               'de': 'Ein Aufgabenmanager nach dem Vorbild des Kanban-Systems. Erstellen und organisieren Sie Aufgaben mit Hilfe von Drag-and-Drop-Funktionen und weisen Sie ihnen Nutzer und Kategorien zu.'},
       github: 'https://github.com/Phischthecat/Join---Kanban-Board',
-      link:'https://philschmucker.de/join',
+      link:'https://join.philschmucker.de',
       img: 'join-view.png',
       state: 'rest',
     },
@@ -93,7 +93,7 @@ export class PortfolioComponent implements OnInit {
       text: {'en': 'A simple Jump-n-Run game based on an object-oriented approach. Help sharkie to find coins and poison bottles to fight against the killer whale.',
               'de': 'Ein einfaches Jump-n-Run-Spiel, das auf einem objektorientierten Ansatz basiert. Hilf Sharkie, Münzen und Giftflaschen zu finden, um gegen den Killerwal zu kämpfen.'},
       github: 'https://github.com/Phischthecat/Sharkie',
-      link:'https://philschmucker.de/sharkie',
+      link:'https://sharkie.philschmucker.de',
       img: 'sharkie-view.png',
       state: 'rest',
     },
@@ -113,7 +113,7 @@ export class PortfolioComponent implements OnInit {
       text: {'en': 'Based on the PokéApi a simple libary that provides and catalogues pokemon information.',
               'de': 'Eine einfache Bibliothek basierend auf der PokéApi, die Pokemon-Informationen bereitstellt und katalogisiert.'},
       github: 'https://github.com/Phischthecat/pokedex',
-      link:'https://philschmucker.de/pokedex/',
+      link:'https://pokedex.philschmucker.de',
       img: 'pokedex-view.png',
       state: 'rest',
     },
@@ -134,7 +134,7 @@ export class PortfolioComponent implements OnInit {
   }
   positionArrowLeft() {
     if(this.innerWidth > 1100) {
-        return 'left: -45px';
+      return 'left: -45px';
     } else {
       return 'left: -35px';
       }
@@ -145,7 +145,7 @@ export class PortfolioComponent implements OnInit {
   }
 
   changeMouseState(state:string, i: number):void {
-    if(state == 'rest' && window.innerWidth > 830) {
+    if(state == 'rest' && this.innerWidth > 830) {
       this.projects[i].state = state;    
     } else {
       this.projects[i].state = 'hover';

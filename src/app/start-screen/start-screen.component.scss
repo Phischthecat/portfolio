@@ -117,9 +117,10 @@ a {
 }
 
 @media (max-width:875px) {
+    $heightNav: 78.18px;
     .container {        
-        height: calc(100vh - 110px);
-        top: 110px;
+        height: calc(100vh - $heightNav);
+        top: $heightNav;
         gap: 5vh;
     
     .mobile-btn {
@@ -147,35 +148,32 @@ a {
 
 @media (max-width:555px) {
     .container {        
-        height: calc(100vh - 110px);
-        top: 110px;
-        gap: 5vh;
-    
-    .mobile-btn {
-        $width: clamp(100px, 55vw, 280px);
-        display: block !important;
-        width: $width;
-        margin-top: 5vh;
-        z-index: 3;
-        font-size: $fs-md !important;
-        
-        &:hover {
-            width: calc($width + 10%);
+            
+        .mobile-btn {
+            $width: clamp(100px, 55vw, 280px);
+            display: block !important;
+            width: $width;
+            margin-top: 5vh;
+            z-index: 3;
+            font-size: $fs-md !important;
+            
+            &:hover {
+                width: calc($width + 10%);
+            }
         }
-    }
 
-    .headline {
-        $offset: calc($fs-headline * 0.09);
-        text-shadow: $offset $offset $secondary_clr !important;
-        font-size: $fs-headline2 !important;
-    }
+        .headline {
+            $offset: calc($fs-headline * 0.09);
+            text-shadow: $offset $offset $secondary_clr !important;
+            font-size: $fs-headline2 !important;
+        }
 
-    .my-name {
-        font-size: $fs-headline4 !important;
-    }
+        .my-name {
+            font-size: $fs-headline4 !important;
+        }
 
-    .socials {
-        position: static !important;
-    }
+        .socials {
+            position: static !important;
+        }
     }
 }
