@@ -79,9 +79,9 @@ export class PortfolioComponent implements OnInit {
   public projects = [
     {
       name: 'Join',
-      techs: ['Javascript |', 'HTML |', 'CSS'],
-      text: {'en': 'A task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
-              'de': 'Ein Aufgabenmanager nach dem Vorbild des Kanban-Systems. Erstellen und organisieren Sie Aufgaben mit Hilfe von Drag-and-Drop-Funktionen und weisen Sie ihnen Nutzer und Kategorien zu.'},
+      techs: ['Javascript', 'HTML', 'CSS'],
+      text: {'en': 'A task manager modeled on the Kanban system. Create tasks and organize them using drag-and-drop functionality. Assign them subtasks, users and categories.',
+              'de': 'Ein Aufgabenmanager nach dem Vorbild des Kanban-Systems. Erstellen Sie Aufgaben und organisieren Sie diese mit Hilfe von Drag-and-Drop-Funktionen. Weisen Sie ihnen Teilaufgaben, Nutzer und Kategorien zu.'},
       github: 'https://github.com/Phischthecat/Join---Kanban-Board',
       link:'https://join.philschmucker.de',
       img: 'join-view.png',
@@ -89,9 +89,9 @@ export class PortfolioComponent implements OnInit {
     },
     {
       name: 'Sharkie',
-      techs: ['OOP |', 'JavaScript |', 'HTML |', 'CSS'],
-      text: {'en': 'A simple Jump-n-Run game based on an object-oriented approach. Help sharkie to find coins and poison bottles to fight against the killer whale.',
-              'de': 'Ein einfaches Jump-n-Run-Spiel, das auf einem objektorientierten Ansatz basiert. Hilf Sharkie, Münzen und Giftflaschen zu finden, um gegen den Killerwal zu kämpfen.'},
+      techs: ['OOP', 'JavaScript', 'HTML', 'CSS'],
+      text: {'en': 'A simple jump-n-run game based on an object-oriented approach. Can you find a way into the cave and defeat the evil killer whale?',
+              'de': 'Ein einfaches Jump-n-Run-Spiel, das auf einem objektorientierten Ansatz basiert. Findest du einen Weg in die Höhle und besiegst den bösen Killerwal?'},
       github: 'https://github.com/Phischthecat/Sharkie',
       link:'https://sharkie.philschmucker.de',
       img: 'sharkie-view.png',
@@ -99,7 +99,7 @@ export class PortfolioComponent implements OnInit {
     },
     {
       name: 'Portfolio',
-      techs: ['Angular |', 'TypeScript |', 'HTML |', 'CSS |', 'Material Design'],
+      techs: ['Angular', 'TypeScript', 'HTML', 'SCSS' ],
       text: {'en': 'Do you like my portfolio website? Feel free to take a look behind the scenes on Github.',
               'de': 'Gefällt Ihnen meine Portfolio-Website? Werfen Sie auf Github gerne einen Blick hinter die Kulissen.'},
       github: 'https://github.com/Phischthecat/portfolio',
@@ -109,9 +109,9 @@ export class PortfolioComponent implements OnInit {
     },
     {
       name: 'Pokédex',
-      techs: ['JavaScript |', 'HTML |', 'CSS |', 'API'],
-      text: {'en': 'Based on the PokéApi a simple libary that provides and catalogues pokemon information.',
-              'de': 'Eine einfache Bibliothek basierend auf der PokéApi, die Pokemon-Informationen bereitstellt und katalogisiert.'},
+      techs: ['JavaScript', 'HTML', 'CSS', 'API'],
+      text: {'en': 'A simple library based on PokéApi that provides and catalogs Pokémon information. Which is your favorite Pokémon?',
+              'de': 'Eine einfache Bibliothek basierend auf der PokéApi, die Pokémon-Informationen bereitstellt und katalogisiert. Welches ist Ihr Lieblingspokémon?'},
       github: 'https://github.com/Phischthecat/pokedex',
       link:'https://pokedex.philschmucker.de',
       img: 'pokedex-view.png',

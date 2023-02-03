@@ -56,8 +56,8 @@
     >
       <h2>{{ project.name }}</h2>
       <div class="techs">
-        <span *ngFor="let project_tech of project['techs']"
-          >{{ project_tech }}
+        <span *ngFor="let project_tech of project['techs']; let last = last"
+          >{{ project_tech }}<ng-container *ngIf="!last"> | </ng-container>
         </span>
       </div>
       <span class="descripition">
@@ -77,8 +77,8 @@
     >
       <h2>{{ project.name }}</h2>
       <div class="techs">
-        <span *ngFor="let project_tech of project['techs']"
-          >{{ project_tech }}
+        <span *ngFor="let project_tech of project['techs']; let last = last"
+          >{{ project_tech }}<ng-container *ngIf="!last"> | </ng-container>
         </span>
       </div>
       <span class="descripition">
