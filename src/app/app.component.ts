@@ -4,16 +4,17 @@ import {TranslateService} from '@ngx-translate/core';
 import { IsOpenService } from './is-open.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  animations: [ 
-    trigger('childAnimation', [
-      transition('* => void', [
-        query("@*", [animateChild()], {optional: true})
-      ]),
-    ])
-  ]
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    animations: [
+        trigger('childAnimation', [
+            transition('* => void', [
+                query("@*", [animateChild()], { optional: true })
+            ]),
+        ])
+    ],
+    standalone: false
 })
 export class AppComponent  {
 

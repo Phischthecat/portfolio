@@ -3,74 +3,75 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import { ChooseLangService } from '../choose-lang.service';
 
 @Component({
-  selector: 'app-portfolio',
-  templateUrl: './portfolio.component.html',
-  styleUrls: ['./portfolio.component.scss'],
-  animations: [
-    trigger('colorUp', [
-      state('rest', style({
-        color: '#2d2d2d12',
-      })),
-      state('hover', style({
-        color: '#ff990044',
-      })),      
-      transition('* => *', animate('225ms ease-in')),
-    ]),
-    trigger('grayscale', [
-      state('rest', style({
-        filter: 'grayscale(1)',
-      })),
-      state('hover', style({
-        filter: 'grayscale(0)'
-      })),    
-      transition('* => *', animate('225ms ease-in')),
-    ]),
-    trigger('frame', [
-      state('rest', style({
-        filter: 'opacity(0)'
-      })),
-      state('hover', style({
-        filter: 'opacity(1)'
-      })),     
-      transition('* => *', animate('225ms ease-in-out')),
-    ]),
-    trigger('circle', [
-      state('rest', style({
-        rotate: '135deg',
-        transform: 'scale(0)',
-      })),
-      state('hover', style({
-        rotate: '0deg',
-        transform: 'scale(1)',
-      })),       
-      transition('rest => *', animate('225ms 150ms ease-in')),
-      transition('hover => *', animate('225ms ease-in')),
-    ]),
-    trigger('text-left', [
-      state('rest', style({
-        filter: 'opacity(0)',
-        transform: 'translateX(-200px)',
-      })),
-      state('hover', style({
-        filter: 'opacity(1)',
-        transform: 'translateX(0px)',
-      })),      
-      transition('rest => *', animate('225ms 300ms ease-in')),
-      transition('hover => *', animate('225ms ease-in')),
-    ]),    
-    trigger('text-right', [
-      state('rest', style({
-        filter: 'opacity(0)',
-        transform: 'translateX(200px)',
-      })),
-      state('hover', style({
-        filter: 'opacity(1)',
-        transform: 'translateX(0px)',
-      })),     
-      transition('rest => *', animate('225ms 300ms ease-in')),
-      transition('hover => *', animate('225ms ease-in')),
-    ]),    
-  ],
+    selector: 'app-portfolio',
+    templateUrl: './portfolio.component.html',
+    styleUrls: ['./portfolio.component.scss'],
+    animations: [
+        trigger('colorUp', [
+            state('rest', style({
+                color: '#2d2d2d12',
+            })),
+            state('hover', style({
+                color: '#ff990044',
+            })),
+            transition('* => *', animate('225ms ease-in')),
+        ]),
+        trigger('grayscale', [
+            state('rest', style({
+                filter: 'grayscale(1)',
+            })),
+            state('hover', style({
+                filter: 'grayscale(0)'
+            })),
+            transition('* => *', animate('225ms ease-in')),
+        ]),
+        trigger('frame', [
+            state('rest', style({
+                filter: 'opacity(0)'
+            })),
+            state('hover', style({
+                filter: 'opacity(1)'
+            })),
+            transition('* => *', animate('225ms ease-in-out')),
+        ]),
+        trigger('circle', [
+            state('rest', style({
+                rotate: '135deg',
+                transform: 'scale(0)',
+            })),
+            state('hover', style({
+                rotate: '0deg',
+                transform: 'scale(1)',
+            })),
+            transition('rest => *', animate('225ms 150ms ease-in')),
+            transition('hover => *', animate('225ms ease-in')),
+        ]),
+        trigger('text-left', [
+            state('rest', style({
+                filter: 'opacity(0)',
+                transform: 'translateX(-200px)',
+            })),
+            state('hover', style({
+                filter: 'opacity(1)',
+                transform: 'translateX(0px)',
+            })),
+            transition('rest => *', animate('225ms 300ms ease-in')),
+            transition('hover => *', animate('225ms ease-in')),
+        ]),
+        trigger('text-right', [
+            state('rest', style({
+                filter: 'opacity(0)',
+                transform: 'translateX(200px)',
+            })),
+            state('hover', style({
+                filter: 'opacity(1)',
+                transform: 'translateX(0px)',
+            })),
+            transition('rest => *', animate('225ms 300ms ease-in')),
+            transition('hover => *', animate('225ms ease-in')),
+        ]),
+    ],
+    standalone: false
 })
 export class PortfolioComponent implements OnInit {
 
