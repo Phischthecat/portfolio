@@ -22,50 +22,43 @@ import { MatSelectModule } from '@angular/material/select';
 import { SocialsComponent } from './socials/socials.component';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import {HttpClientModule, HttpClient} from '@angular/common/http';
+import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { LegalNoticeComponent } from './legal-notice/legal-notice.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    StartScreenComponent,
-    AboutMeComponent,
-    SkillsComponent,
-    PortfolioComponent,
-    ContactComponent,
-    NavbarComponent,
-    ContactFormComponent,
-    FooterComponent,
-    NavigationComponent,
-    StartComponent,
-    SocialsComponent,
-    LegalNoticeComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatIconModule,
-    MatFormFieldModule,
-    MatInputModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatSelectModule,
-    HttpClientModule,
-    TranslateModule.forRoot({
-      defaultLanguage: 'en',
-      loader: {
-          provide: TranslateLoader,
-          useFactory: HttpLoaderFactory,
-          deps: [HttpClient]
-      }
-  })
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        StartScreenComponent,
+        AboutMeComponent,
+        SkillsComponent,
+        PortfolioComponent,
+        ContactComponent,
+        NavbarComponent,
+        ContactFormComponent,
+        FooterComponent,
+        NavigationComponent,
+        StartComponent,
+        SocialsComponent,
+        LegalNoticeComponent
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatIconModule,
+        MatFormFieldModule,
+        MatInputModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatSelectModule,
+        TranslateModule.forRoot({
+            defaultLanguage: 'en',
+            loader: {
+                provide: TranslateLoader,
+                useFactory: HttpLoaderFactory,
+                deps: [HttpClient]
+            }
+        })], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
