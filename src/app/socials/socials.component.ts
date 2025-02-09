@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { IsOpenService } from '../is-open.service';
 
 @Component({
   selector: 'app-socials',
@@ -7,6 +8,7 @@ import { Component } from '@angular/core';
   standalone: false,
 })
 export class SocialsComponent {
+  constructor(public menu: IsOpenService) {}
   socials = [
     {
       link: 'https://github.com/Phischthecat',
@@ -27,4 +29,13 @@ export class SocialsComponent {
       name: 'linkedin',
     },
   ];
+
+  moveTo(section: string) {
+    document.location = '#' + section;
+    document.documentElement.style.scrollBehavior = 'auto';
+    this.menu.isOpen = false;
+    setTimeout(() => {
+      document.documentElement.style.scrollBehavior = 'smooth';
+    }, 100);
+  }
 }

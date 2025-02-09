@@ -16,6 +16,7 @@
     bottom: -1px;
     background-color: $primary_clr;
     clip-path: polygon(0 0, 100% 15%, 100% 100%, 0% 100%);
+    z-index: -2;
   }
 
   .header {
