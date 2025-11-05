@@ -2,25 +2,30 @@ name: Build Angular App
 
 on:
   push: 
-    branches: [main]
-
+    branches: 
+      - main
 jobs:
-  build-angular:
+  build-and-deploy:
     runs-on: ubuntu-latest
-
+    concurrency: ci-${{github.ref}}
     steps:
-      - uses: actions/checkout@v5.0.0
+      - name: Checkout
+        uses: actions/checkout@v5.0.0
       
-      - name: Setup Node JS
+      - name: Setup Node
         uses: actions/setup-node@v6.0.0
         with: 
           node-version: 18.x
 
-      - name: Install dependencies
+      - name: Install
         run: npm install
 
       - name: Build
         run: npm run build
 
-      - name: Deploy GitHub Pages site
-        uses: actions/deploy-pages@v4.0.5
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: build
+permissions:
+  contents: write
