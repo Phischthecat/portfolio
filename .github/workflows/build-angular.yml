@@ -21,3 +21,6 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Deploy GitHub Pages site
+        uses: actions/deploy-pages@v4.0.5
