@@ -1,26 +1,26 @@
 name: Build Angular App
 
 on:
-  push: 
-    branches: 
+  push:
+    branches:
       - main
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     concurrency: ci-${{github.ref}}
     steps:
-      - name: Checkout
+      - name: Checkout 😎
         uses: actions/checkout@v5.0.0
-      
-      - name: Setup Node
+
+      - name: Setup Node 🐌
         uses: actions/setup-node@v6.0.0
-        with: 
+        with:
           node-version: 18.x
 
-      - name: Install
+      - name: Install 🤖
         run: npm install
 
-      - name: Build
+      - name: Build 🦾
         run: npm run build
 
       - name: Deploy 🚀
