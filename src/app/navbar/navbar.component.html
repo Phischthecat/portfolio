@@ -1,0 +1,32 @@
+<nav>
+  <a href="#">
+    <img class="logo" src="assets/img/logo_phisch_black.png" alt="" />
+  </a>
+  <div *ngIf="menu.isOpen" [@openClose] class="lang-container">
+    <span class="lang de" (click)="changeLang('de')">DE</span>
+    <span class="lang en" (click)="changeLang('en')">EN</span>
+  </div>
+  <button
+    #hamBtn
+    class="hamBtn"
+    aria-controls="primary-navigation"
+    aria-expanded="false"
+    (click)="openNavbar()"
+  >
+    <svg
+      stroke="#000000"
+      fill="none"
+      class="hamburger"
+      viewBox="0 -10 130 130"
+      width="50"
+    >
+      <path
+        class="line"
+        stroke-width="10"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="m 100 35 h -60 a 1 1 0 0 0 0 20 h 60 a 1 1 0 0 1 0 20 h -60 a 1 1 0 0 1 0 -60 h 30 v 90"
+      ></path>
+    </svg>
+  </button>
+</nav>

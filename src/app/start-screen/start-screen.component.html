@@ -1,0 +1,44 @@
+<div class="container" #hero>
+  <div class="wrapper">
+    <p [@slideInRight] class="headline">Frontend</p>
+    <p [@slideInLeft] class="headline" translate>Developer</p>
+    <div [@popUp] class="subtitle">
+      <div class="horizontal-line"></div>
+      <span class="my-name">Phil Schmucker</span>
+      <span>Test</span>
+    </div>
+    <button
+      class="btn btn-black mobile-btn"
+      (click)="moveTo('contact')"
+      translate
+    >
+      Send a message
+    </button>
+  </div>
+  <div class="socials">
+    <div [@slideInBottom] class="email">
+      <a href="#contact">hello&#64;philschmucker.de</a>
+    </div>
+    <a href="#aboutMe" class="call2action">
+      <div class="img-container">
+        <img src="assets/img/arrow.svg" alt="arrow" />
+      </div>
+      <div [@fadeIn] class="text-container">
+        <div>
+          <span>S</span>
+          <span>c</span>
+          <span>r</span>
+          <span>o</span>
+          <span>l</span>
+          <span>l</span>
+        </div>
+        <div>
+          <span>D</span>
+          <span>o</span>
+          <span>w</span>
+          <span>n</span>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>

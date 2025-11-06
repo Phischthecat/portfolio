@@ -1,0 +1,25 @@
+<div class="navigation">
+  <div [@openClose] class="section-container">
+    <div class="sections">
+      <div (click)="moveTo('aboutMe')" translate>About me</div>
+    </div>
+    <div class="sections">
+      <div (click)="moveTo('mySkills')" translate>My skills</div>
+    </div>
+    <div class="sections">
+      <div (click)="moveTo('portfolio')" translate>Portfolio</div>
+    </div>
+  </div>
+
+  <div class="footer-nav" [@openCloseFooter]>
+    <div class="content">
+      <div class="left-side">
+        <h1 (click)="moveTo('contact')" class="white" translate>Say Hi!</h1>
+        <span (click)="moveTo('contact')">hello&#64;philschmucker.de</span>
+      </div>
+      <div class="right-side">
+        <app-socials></app-socials>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="left-side">
+    <a href="#">
+      <img
+        class="logo"
+        src="assets/img/logo_phisch_white.png"
+        alt="logo white"
+      />
+    </a>
+    <div>
+      <span>&copy; Phil Schmucker {{ year }}</span>
+    </div>
+  </div>
+  <div class="right-side">
+    <app-socials></app-socials>
+    <div (click)="scrollToStart()" class="legalNotice">
+      <a routerLink="/legal-notice" translate>Legal notice</a>
+    </div>
+  </div>
+</div>
