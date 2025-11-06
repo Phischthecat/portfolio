@@ -20,12 +20,11 @@ jobs:
           node-version: 18.x
 
       - name: Install 🤖
-        run: |  
-            npm ci
-            npm run build
+        run: |
+          npm ci
+          npm run build
 
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.7.4
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: docs
-          branch: main
