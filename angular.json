@@ -17,8 +17,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "baseHref": "/portfolio/",
             "outputPath": {
-              "baseHref": "/portfolio/",
               "base": "docs",
               "browser": ""
             },
