@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+permissions:
+  contents: write
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -18,14 +20,12 @@ jobs:
           node-version: 18.x
 
       - name: Install 🤖
-        run: npm install
-
-      - name: Build 🦾
-        run: npm run build
+        run: |  
+            npm ci
+            npm run build
 
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: JamesIves/github-pages-deploy-action@v4.7.4
         with:
           folder: docs
-permissions:
-  contents: write
+          branch: main
