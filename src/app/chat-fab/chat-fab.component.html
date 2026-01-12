@@ -1,0 +1,18 @@
+<div class="chat-container">
+  @if (showHint) {
+  <div class="chat-bubble">
+    Hast du Fragen zu meinem Profil? Frag meinen KI-Assistenten!
+    <div class="bubble-arrow"></div>
+  </div>
+  }
+
+  <button
+    mat-fab
+    color="primary"
+    class="chat-fab"
+    (click)="openChatDialog()"
+    title="Chat öffnen"
+  >
+    <img src="assets/img/chat.svg" alt="Chatbot" />
+  </button>
+</div>

@@ -127,7 +127,7 @@ export class PortfolioComponent implements OnInit {
         de: 'Ein Aufgabenmanager nach dem Vorbild des Kanban-Systems. Erstellen Sie Aufgaben und organisieren Sie diese mit Hilfe von Drag-and-Drop-Funktionen. Weisen Sie ihnen Teilaufgaben, Nutzer und Kategorien zu.',
       },
       github: 'https://github.com/Phischthecat/Join---Kanban-Board',
-      link: 'https://phischthecat.github.io/Join---Kanban-Board/',
+      link: 'https://join.philschmucker.de',
       img: 'join-view.png',
       state: 'rest',
     },
@@ -139,7 +139,7 @@ export class PortfolioComponent implements OnInit {
         de: 'Ein einfaches Jump-n-Run-Spiel, das auf einem objektorientierten Ansatz basiert. Findest du einen Weg in die Höhle und besiegst den bösen Killerwal?',
       },
       github: 'https://github.com/Phischthecat/Sharkie',
-      link: 'https://phischthecat.github.io/Sharkie/',
+      link: 'https://sharkie.philschmucker.de',
       img: 'sharkie-view.png',
       state: 'rest',
     },
@@ -163,14 +163,14 @@ export class PortfolioComponent implements OnInit {
         de: 'Eine einfache Bibliothek basierend auf der PokéApi, die Pokémon-Informationen bereitstellt und katalogisiert. Welches ist Ihr Lieblingspokémon?',
       },
       github: 'https://github.com/Phischthecat/pokedex',
-      link: 'https://phischthecat.github.io/pokedex/',
+      link: 'https://pokedex.philschmucker.de',
       img: 'pokedex-view.png',
       state: 'rest',
     },
   ];
   public innerWidth: any;
 
-  @HostListener('window:resize', ['$event'])
+  @HostListener('window:resize')
   onResize() {
     this.innerWidth = window.innerWidth;
   }

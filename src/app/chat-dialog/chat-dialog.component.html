@@ -1,0 +1,62 @@
+<div class="chat-dialog-container">
+  <div class="chat-header">
+    <h2>Chat mit KI</h2>
+    <button
+      mat-icon-button
+      (click)="clearChat()"
+      title="Chat löschen"
+      class="clear-btn"
+    >
+      <img src="assets/img/bin.svg" alt="Löschen" />
+    </button>
+    <button
+      mat-icon-button
+      (click)="closeChat()"
+      title="Chat schließen"
+      class="close-btn"
+    >
+      <img src="assets/img/cross.svg" alt="Schließen" />
+    </button>
+  </div>
+
+  <div class="chat-messages">
+    <div
+      *ngFor="let msg of chatService.messages()"
+      [class]="'message ' + msg.role"
+    >
+      <div class="message-content">
+        <markdown [data]="msg.text"></markdown>
+      </div>
+    </div>
+    <div *ngIf="isLoading" class="message bot loading">
+      <div class="message-content">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="chat-input-container">
+    <mat-form-field class="full-width" subscriptSizing="dynamic">
+      <mat-label>Deine Nachricht...</mat-label>
+      <input
+        matInput
+        [(ngModel)]="userInput"
+        (keydown)="onKeydown($event)"
+        [disabled]="isLoading"
+      />
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="sendMessage()"
+      [disabled]="!userInput.trim() || isLoading"
+    >
+      <div class="button-content">
+        <img src="assets/img/send.svg" alt="Senden" />
+        <span>Senden</span>
+      </div>
+    </button>
+  </div>
+</div>
