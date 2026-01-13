@@ -1,141 +1,143 @@
-@import 'src/modules/utilities/_button';
-@import 'src/modules/utilities/_vars';
-@import 'src/assets/fonts/_typography';
+@import "src/modules/utilities/_button";
+@import "src/modules/utilities/_vars";
+@import "src/assets/fonts/_typography";
 
 .contactForm {
-    width: 50vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    font-weight: $fw-300;
-    margin: 20px 0;
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  font-weight: $fw-300;
+  margin: 20px 0;
 
-    .inputBox {
-        $transitionTime: 150ms;
-        position: relative;
-        width: 100%;
-        textarea { 
-            resize: vertical; 
-            max-height: 300px; 
-            min-height: 200px; 
+  .inputBox {
+    $transitionTime: 150ms;
+    position: relative;
+    width: 100%;
+    textarea {
+      resize: vertical;
+      max-height: 300px;
+      min-height: 200px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid transparent;
+      border-bottom: 2px solid $background_clr;
+      background-color: $primary_clr;
+      color: $background_clr;
+      outline: none;
+      font-size: $fs-md;
+      transition: $transitionTime;
+
+      &:hover {
+        border: 2px solid $background_clr;
+        border-radius: $br;
+      }
+
+      &:focus {
+        ~ span {
+          transform: translateX(10px) translateY(-10px);
+          font-size: $fs-sm;
+          font-weight: $fw-600;
+          padding: 0 10px;
+          background-color: $primary_clr;
+          letter-spacing: 5px;
+          color: $background_clr;
+        }
+        &.ng-valid {
+          border: 2px solid $background_clr;
+          border-radius: $br;
         }
 
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            border: 2px solid transparent;
-            border-bottom: 2px solid $background_clr;
+        &.ng-invalid {
+          border-radius: $br;
+          border: 2px solid $red;
+          color: $red;
+
+          ~ span {
+            color: $red;
+          }
+        }
+      }
+
+      &.ng-touched,
+      &.ng-dirty {
+        &.ng-invalid {
+          border-bottom: 2px solid $red;
+          color: $red;
+
+          ~ span {
+            color: $red;
+          }
+
+          &:hover {
+            border: 2px solid $red;
+          }
+        }
+        &.ng-valid {
+          border-bottom: 2px solid $background_clr;
+          color: $background_clr;
+
+          ~ span {
+            color: $background_clr;
+            transform: translateX(10px) translateY(-10px);
+            font-size: $fs-sm;
+            font-weight: $fw-600;
+            padding: 0 10px;
             background-color: $primary_clr;
-            color: $background_clr;
-            outline: none;
-            font-size: $fs-md;
-            transition: $transitionTime;
+            letter-spacing: 5px;
+          }
 
-            &:hover {
-                border: 2px solid $background_clr;
-            }
-            
-            &:focus {
-                ~ span {
-                    transform: translateX(10px) translateY(-10px);
-                    font-size: $fs-sm;
-                    font-weight: $fw-600;
-                    padding: 0 10px;
-                    background-color: $primary_clr;
-                    letter-spacing: 5px;
-                    color: $background_clr;
-                }
-                &.ng-valid {
-                    border: 2px solid $background_clr;    
-                }
-
-                &.ng-invalid {
-                    border: 2px solid $red;
-                    color: $red; 
-
-                    ~ span {
-                        color: $red; 
-                    }
-                }
-            }
-
-            &.ng-touched, &.ng-dirty { 
-
-                &.ng-invalid {
-                    border-bottom: 2px solid $red;
-                    color: $red;
-    
-                    ~ span {
-                        color: $red;              
-                    }
-                    
-                    &:hover {
-                        border: 2px solid $red;    
-                    }    
-                }
-                &.ng-valid {
-                    border-bottom: 2px solid $background_clr;
-                    color: $background_clr;
-                    
-                    ~ span {
-                        color: $background_clr;
-                        transform: translateX(10px) translateY(-10px);
-                        font-size: $fs-sm;
-                        font-weight: $fw-600;
-                        padding: 0 10px;
-                        background-color: $primary_clr;
-                        letter-spacing: 5px;                        
-                    }
-                    
-                    &:hover {
-                        border: 2px solid $background_clr;    
-                    }    
-                }
-            }
+          &:hover {
+            border: 2px solid $background_clr;
+          }
         }
-
-        span {
-            position: absolute;
-            left: 0;
-            padding: 10px 30px;
-            font-size: $fs-regular;
-            color: $background_clr;
-            pointer-events: none;
-            transition: $transitionTime;            
-        }
+      }
     }
 
-    
-    .error{
-        color: $red;
-        font-size: $fs-xxs;
-        margin-top: 5px;
+    span {
+      position: absolute;
+      left: 0;
+      padding: 10px 30px;
+      font-size: $fs-regular;
+      color: $background_clr;
+      pointer-events: none;
+      transition: $transitionTime;
     }
+  }
+
+  .error {
+    color: $red;
+    font-size: $fs-xxs;
+    margin-top: 5px;
+  }
 }
 
 .invalid-filled-input {
-    border: 2px solid $red !important;
-    
-    ~ span {
-        color: $background_clr;
-        transform: translateX(10px) translateY(-10px) !important;
-        font-size: $fs-sm !important;
-        font-weight: $fw-600;
-        padding: 0 10px !important;
-        background-color: $primary_clr;
-        letter-spacing: 5px;                        
-    }
+  border: 2px solid $red !important;
+
+  ~ span {
+    color: $background_clr;
+    transform: translateX(10px) translateY(-10px) !important;
+    font-size: $fs-sm !important;
+    font-weight: $fw-600;
+    padding: 0 10px !important;
+    background-color: $primary_clr;
+    letter-spacing: 5px;
+  }
 }
 
-@media (max-width: 630px) { 
-    :host {
-        width: 100%;;
-    }
+@media (max-width: 630px) {
+  :host {
+    width: 100%;
+  }
 
-    .contactForm {
-        width: 100%;
-    }
-
+  .contactForm {
+    width: 100%;
+  }
 }
