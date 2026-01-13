@@ -1,10 +1,21 @@
 <div class="container" id="mySkills">
   <div class="wrapper">
-    <h1 data-text="My skills" translate>My skills</h1>
-    <div class="skill-container">
-      <div *ngFor="let skill of skills; let i = index" class="skill">
-        <img src="assets/img/skills/{{ skills_img[i] }}" alt="{{ skill }}" />
-        <span>{{ skill }}</span>
+    <h1>{{ "SKILLS_TITLE" | translate }}</h1>
+    <div class="bento-grid" (click)="onGridClick($event)">
+      <div
+        *ngFor="let skill of skills"
+        [id]="skill.id"
+        class="bento-item"
+        [ngStyle]="getItemStyle(skill.id)"
+      >
+        <div class="item-header">
+          <img
+            class="icon"
+            [src]="'assets/img/skills/' + skill.icon"
+            [alt]="skill.name"
+          />
+          <h3 class="item-title">{{ skill.name }}</h3>
+        </div>
       </div>
     </div>
   </div>
