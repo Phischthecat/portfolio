@@ -3,11 +3,12 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { ChatDialogComponent } from '../chat-dialog/chat-dialog.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-chat-fab',
   standalone: true,
-  imports: [MatButtonModule, MatIconModule],
+  imports: [MatButtonModule, MatIconModule, TranslateModule],
   templateUrl: './chat-fab.component.html',
   styleUrls: ['./chat-fab.component.scss'],
 })

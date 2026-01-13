@@ -1,7 +1,7 @@
 <div class="chat-container">
   @if (showHint) {
   <div class="chat-bubble">
-    Hast du Fragen zu meinem Profil? Frag meinen KI-Assistenten!
+    {{ "CHAT_FAB_BUBBLE_MESSAGE" | translate }}
     <div class="bubble-arrow"></div>
   </div>
   }
@@ -11,8 +11,11 @@
     color="primary"
     class="chat-fab"
     (click)="openChatDialog()"
-    title="Chat öffnen"
+    title="{{ 'CHAT_FAB_BUTTON_TITLE' | translate }}"
   >
-    <img src="assets/img/chat.svg" alt="Chatbot" />
+    <img
+      src="assets/img/chat.svg"
+      alt="{{ 'CHAT_FAB_BUTTON_ALT_TEXT' | translate }}"
+    />
   </button>
 </div>

@@ -2,6 +2,7 @@
   *ngFor="let social of socials; let i = index"
   target="{{ social.target }}"
   href="{{ social.link }}"
+  [title]="social.name"
   (click)="social.link == '#contact' ? moveTo(social.link) : ''"
   ><img
     class="socialIcon"

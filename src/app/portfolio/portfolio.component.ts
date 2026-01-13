@@ -123,8 +123,8 @@ export class PortfolioComponent implements OnInit {
       name: 'Join',
       techs: ['Javascript', 'HTML', 'CSS'],
       text: {
-        en: 'A task manager modeled on the Kanban system. Create tasks and organize them using drag-and-drop functionality. Assign them subtasks, users and categories.',
-        de: 'Ein Aufgabenmanager nach dem Vorbild des Kanban-Systems. Erstellen Sie Aufgaben und organisieren Sie diese mit Hilfe von Drag-and-Drop-Funktionen. Weisen Sie ihnen Teilaufgaben, Nutzer und Kategorien zu.',
+        en: 'This project implements a modern task manager based on the proven Kanban system. The application enables highly efficient organisation of work processes: users can manage tasks agilely using drag-and-drop and structure them in depth by assigning subtasks, team members and categories. The aim is to make complex projects manageable through maximum clarity and intuitive operation.',
+        de: 'Dieses Projekt realisiert einen modernen Aufgabenmanager auf Basis des bewährten Kanban-Systems. Die Anwendung ermöglicht eine hocheffiziente Organisation von Arbeitsprozessen: Nutzer können Aufgaben agil per Drag-and-Drop verwalten und durch die Zuweisung von Teilaufgaben, Teammitgliedern und Kategorien tiefgreifend strukturieren. Ziel ist es, komplexe Projekte durch maximale Übersichtlichkeit und intuitive Bedienung beherrschbar zu machen.',
       },
       github: 'https://github.com/Phischthecat/Join---Kanban-Board',
       link: 'https://join.philschmucker.de',
@@ -135,8 +135,8 @@ export class PortfolioComponent implements OnInit {
       name: 'Sharkie',
       techs: ['OOP', 'JavaScript', 'HTML', 'CSS'],
       text: {
-        en: 'A simple jump-n-run game based on an object-oriented approach. Can you find a way into the cave and defeat the evil killer whale?',
-        de: 'Ein einfaches Jump-n-Run-Spiel, das auf einem objektorientierten Ansatz basiert. Findest du einen Weg in die Höhle und besiegst den bösen Killerwal?',
+        en: 'This project demonstrates the consistent implementation of object-oriented software design in a gaming context. Behind the charming jump ’n’ run mechanics lies a modular architecture that neatly separates logic and graphics. Accompany the hero on his mission: find the hidden path into the cave and face the final showdown against the notorious killer whale. A prime example of scalable game development and intuitive level design.',
+        de: 'Dieses Projekt demonstriert die konsequente Umsetzung eines objektorientierten Software-Designs im Gaming-Kontext. Hinter der charmanten Jump-’n’-Run-Mechanik verbirgt sich eine modulare Architektur, die Logik und Grafik sauber trennt. Begleiten Sie den Helden auf seiner Mission: Finden Sie den verborgenen Pfad in die Höhle und stellen Sie sich dem finalen Showdown gegen den berüchtigten Killerwal. Ein Paradebeispiel für skalierbare Spieleentwicklung und intuitives Leveldesign.',
       },
       github: 'https://github.com/Phischthecat/Sharkie',
       link: 'https://sharkie.philschmucker.de',
@@ -145,10 +145,10 @@ export class PortfolioComponent implements OnInit {
     },
     {
       name: 'Portfolio',
-      techs: ['Angular', 'TypeScript', 'HTML', 'SCSS'],
+      techs: ['Angular', 'TypeScript', 'HTML', 'SCSS', 'AI', 'API'],
       text: {
-        en: 'Do you like my portfolio website? Feel free to take a look behind the scenes on Github.',
-        de: 'Gefällt Ihnen meine Portfolio-Website? Werfen Sie auf Github gerne einen Blick hinter die Kulissen.',
+        en: 'Did the user interface win you over? Then I invite you to learn more about the technical foundation of this website. You can find the complete source code directly in my GitHub repository.',
+        de: 'Hat Sie das User Interface überzeugt? Dann lade ich Sie ein, das technische Fundament dieser Website kennenzulernen. Den vollständigen Quellcode finden Sie direkt in meinem GitHub-Repository.',
       },
       github: 'https://github.com/Phischthecat/portfolio',
       link: '#',
@@ -159,8 +159,8 @@ export class PortfolioComponent implements OnInit {
       name: 'Pokédex',
       techs: ['JavaScript', 'HTML', 'CSS', 'API'],
       text: {
-        en: 'A simple library based on PokéApi that provides and catalogs Pokémon information. Which is your favorite Pokémon?',
-        de: 'Eine einfache Bibliothek basierend auf der PokéApi, die Pokémon-Informationen bereitstellt und katalogisiert. Welches ist Ihr Lieblingspokémon?',
+        en: 'This project uses the powerful PokéAPI to create a comprehensive digital encyclopaedia. By implementing efficient API calls, real-time data on attributes, types and abilities is catalogued and clearly presented. A project that shows how complex external data sources can be seamlessly integrated into a user-friendly interface. Browse through the catalogues and find your favourite Pokémon!',
+        de: 'Dieses Projekt nutzt die leistungsstarke PokéAPI, um eine umfassende, digitale Enzyklopädie zu erstellen. Durch die Implementierung effizienter API-Abrufe werden Echtzeit-Daten zu Attributen, Typen und Fähigkeiten katalogisiert und übersichtlich aufbereitet. Ein Projekt, das zeigt, wie komplexe externe Datenquellen nahtlos in eine benutzerfreundliche Oberfläche integriert werden. Stöbern Sie durch die Kataloge und finden Sie Ihr Lieblings-Pokémon!',
       },
       github: 'https://github.com/Phischthecat/pokedex',
       link: 'https://pokedex.philschmucker.de',

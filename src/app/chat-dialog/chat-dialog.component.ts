@@ -8,6 +8,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MarkdownModule } from 'ngx-markdown';
 import { ChatService } from '../chat.service';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-chat-dialog',
@@ -21,18 +22,29 @@ import { ChatService } from '../chat.service';
     MatFormFieldModule,
     MatIconModule,
     MarkdownModule,
+    TranslateModule,
   ],
   templateUrl: './chat-dialog.component.html',
   styleUrls: ['./chat-dialog.component.scss'],
 })
-export class ChatDialogComponent {
+export class ChatDialogComponent implements OnInit {
   userInput = '';
   isLoading = false;
 
   constructor(
     public chatService: ChatService,
-    public dialogRef: MatDialogRef<ChatDialogComponent>
+    public dialogRef: MatDialogRef<ChatDialogComponent>,
+    private translate: TranslateService
   ) {}
+
+  ngOnInit(): void {
+    this.chatService.messages.set([
+      {
+        role: 'bot',
+        text: this.translate.instant('CHAT_DIALOG_INIT_MESSAGE'),
+      },
+    ]);
+  }
 
   async sendMessage() {
     if (!this.userInput.trim()) return;

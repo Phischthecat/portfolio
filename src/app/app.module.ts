@@ -22,20 +22,21 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { SocialsComponent } from './socials/socials.component';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import {
-  HttpClient,
+  provideTranslateService,
+  TranslateDirective,
+  TranslatePipe,
+} from '@ngx-translate/core';
+import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
+import {
   provideHttpClient,
   withInterceptorsFromDi,
 } from '@angular/common/http';
 import { LegalNoticeComponent } from './legal-notice/legal-notice.component';
 import { ChatFabComponent } from './chat-fab/chat-fab.component';
 import { provideMarkdown } from 'ngx-markdown';
-
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
-}
+import { provideRouter, withViewTransitions } from '@angular/router';
+import { routes } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -67,15 +68,22 @@ export function HttpLoaderFactory(http: HttpClient) {
     ReactiveFormsModule,
     MatSelectModule,
     ChatFabComponent,
-    TranslateModule.forRoot({
-      defaultLanguage: 'en',
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient],
-      },
+    TranslatePipe,
+    TranslateDirective,
+  ],
+  providers: [
+    provideHttpClient(withInterceptorsFromDi()),
+    provideMarkdown(),
+    provideRouter(routes, withViewTransitions()),
+
+    provideTranslateService({
+      lang: 'en',
+      fallbackLang: 'en',
+      loader: provideTranslateHttpLoader({
+        prefix: '/assets/i18n/',
+        suffix: '.json',
+      }),
     }),
   ],
-  providers: [provideHttpClient(withInterceptorsFromDi()), provideMarkdown()],
 })
 export class AppModule {}

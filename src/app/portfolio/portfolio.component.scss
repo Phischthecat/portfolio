@@ -61,6 +61,7 @@
         aspect-ratio: 4 / 3;
         object-fit: cover;
         box-shadow: $boxshadow;
+        border-radius: $br;
       }
 
       .frameWrapper {
@@ -76,6 +77,7 @@
           height: 100%;
           width: 100%;
           border: $frame;
+          border-radius: $br;
         }
 
         .circle-black {

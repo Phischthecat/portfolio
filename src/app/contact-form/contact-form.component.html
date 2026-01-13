@@ -6,7 +6,7 @@
 >
   <div class="inputBox">
     <input type="text" formControlName="name" name="name" #formName />
-    <span translate>Your name</span>
+    <span>{{ "CONTACT_FORM_NAME_LABEL" | translate }}</span>
     <ng-container
       *ngIf="
         contactForm.controls['name'].dirty ||
@@ -14,7 +14,7 @@
       "
     >
       <div *ngIf="contactForm.controls['name'].errors?.['required']">
-        <p class="error" translate>Please enter your name</p>
+        <p class="error">{{ "CONTACT_FORM_NAME_PLACEHOLDER" | translate }}</p>
       </div>
     </ng-container>
   </div>
@@ -28,7 +28,7 @@
         formEmail.value.length > 0 && !contactForm.controls['email'].valid
       "
     />
-    <span translate>Your email</span>
+    <span>{{ "CONTACT_FORM_EMAIL_LABEL" | translate }}</span>
     <ng-container
       *ngIf="
         contactForm.controls['email'].dirty ||
@@ -36,8 +36,8 @@
       "
     >
       <ng-container>
-        <p class="error" *ngIf="contactForm.controls['email'].errors" translate>
-          Please enter your e-mail address
+        <p class="error" *ngIf="contactForm.controls['email'].errors">
+          {{ "CONTACT_FORM_EMAIL_PLACEHOLDER" | translate }}
         </p>
       </ng-container>
     </ng-container>
@@ -49,7 +49,7 @@
       name="message"
       #formMessage
     ></textarea>
-    <span translate>Your message</span>
+    <span>{{ "CONTACT_FORM_MESSAGE_LABEL" | translate }}</span>
     <ng-container
       *ngIf="
         contactForm.controls['message'].dirty ||
@@ -59,9 +59,8 @@
       <p
         class="error"
         *ngIf="contactForm.controls['message'].errors?.['required']"
-        translate
       >
-        Please enter a message for me
+        {{ "CONTACT_FORM_MESSAGE_PLACEHOLDER" | translate }}
       </p>
     </ng-container>
   </div>
@@ -73,8 +72,7 @@
     class="btn btn-white"
     type="submit"
     #formBtn
-    translate
   >
-    Send
+    {{ "SEND_BUTTON" | translate }}
   </button>
 </form>

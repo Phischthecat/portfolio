@@ -1,10 +1,10 @@
 <div class="chat-dialog-container">
   <div class="chat-header">
-    <h2>Chat mit KI</h2>
+    <h2>{{ "CHAT_DIALOG_TITLE" | translate }}</h2>
     <button
       mat-icon-button
       (click)="clearChat()"
-      title="Chat löschen"
+      title="{{ 'CHAT_DIALOG_CLEAR_BUTTON' | translate }}"
       class="clear-btn"
     >
       <img src="assets/img/bin.svg" alt="Löschen" />
@@ -12,7 +12,7 @@
     <button
       mat-icon-button
       (click)="closeChat()"
-      title="Chat schließen"
+      title="{{ 'CHAT_DIALOG_CLOSE_BUTTON' | translate }}"
       class="close-btn"
     >
       <img src="assets/img/cross.svg" alt="Schließen" />
@@ -39,7 +39,7 @@
 
   <div class="chat-input-container">
     <mat-form-field class="full-width" subscriptSizing="dynamic">
-      <mat-label>Deine Nachricht...</mat-label>
+      <mat-label>{{ "CHAT_DIALOG_PLACEHOLDER" | translate }}</mat-label>
       <input
         matInput
         [(ngModel)]="userInput"
@@ -55,7 +55,7 @@
     >
       <div class="button-content">
         <img src="assets/img/send.svg" alt="Senden" />
-        <span>Senden</span>
+        <span>{{ "SEND_BUTTON" | translate }}</span>
       </div>
     </button>
   </div>

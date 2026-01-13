@@ -1,21 +1,29 @@
 <div class="navigation">
   <div [@openClose] class="section-container">
     <div class="sections">
-      <div (click)="moveTo('aboutMe')" translate>About me</div>
+      <div (click)="moveTo('aboutMe')">
+        {{ "ABOUT_ME_TITLE" | translate }}
+      </div>
     </div>
     <div class="sections">
-      <div (click)="moveTo('mySkills')" translate>My skills</div>
+      <div (click)="moveTo('mySkills')">{{ "SKILLS_TITLE" | translate }}</div>
     </div>
     <div class="sections">
-      <div (click)="moveTo('portfolio')" translate>Portfolio</div>
+      <div (click)="moveTo('portfolio')">
+        {{ "PORTFOLIO_TITLE" | translate }}
+      </div>
     </div>
   </div>
 
   <div class="footer-nav" [@openCloseFooter]>
     <div class="content">
       <div class="left-side">
-        <h1 (click)="moveTo('contact')" class="white" translate>Say Hi!</h1>
-        <span (click)="moveTo('contact')">hello&#64;philschmucker.de</span>
+        <h1 (click)="moveTo('contact')" class="white">
+          {{ "CONTACT_TITLE" | translate }}
+        </h1>
+        <span (click)="moveTo('contact')">{{
+          "EMAIL_ADRESSE" | translate
+        }}</span>
       </div>
       <div class="right-side">
         <app-socials></app-socials>

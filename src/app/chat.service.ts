@@ -9,12 +9,7 @@ export interface Message {
 export class ChatService {
   private prompt = '';
 
-  public messages = signal<Message[]>([
-    {
-      role: 'bot',
-      text: 'Hallo, ich bin Phisch, der KI-Assistent von Phil Schmucker und beantworte dir gerne Fragen zu ihm.',
-    },
-  ]);
+  public messages = signal<Message[]>([]);
 
   constructor() {
     this.loadContextPrompt();

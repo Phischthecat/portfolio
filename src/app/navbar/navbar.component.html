@@ -3,18 +3,22 @@
     <img class="logo" src="assets/img/logo_phisch_black.png" alt="" />
   </a>
   <div *ngIf="menu.isOpen" [@openClose] class="lang-container">
-    <span class="lang de" (click)="changeLang('de')">DE</span>
-    <span class="lang en" (click)="changeLang('en')">EN</span>
+    <span class="lang de" (click)="changeLang('de')">{{
+      "NAVBAR_GERMAN" | translate
+    }}</span>
+    <span class="lang en" (click)="changeLang('en')">{{
+      "NAVBAR_ENGLISH" | translate
+    }}</span>
   </div>
   <button
     #hamBtn
     class="hamBtn"
     aria-controls="primary-navigation"
-    aria-expanded="false"
+    [attr.aria-expanded]="menu.isOpen"
     (click)="openNavbar()"
   >
     <svg
-      stroke="#000000"
+      [attr.stroke]="menu.isOpen ? '#ff9900' : '#000000'"
       fill="none"
       class="hamburger"
       viewBox="0 -10 130 130"

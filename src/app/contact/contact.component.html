@@ -1,10 +1,10 @@
 <div class="container" id="contact">
   <div class="header">
-    <h1 class="white" data-text="Say Hi!" translate>Say Hi!</h1>
+    <h1 class="white">{{ "CONTACT_TITLE" | translate }}</h1>
   </div>
   <div class="contact-container">
-    <h2 translate>How do you like your coffee?</h2>
-    <span translate>Let's meet up and make your ideas happen</span>
+    <h2>{{ "CONTACT_SUBTITLE" | translate }}</h2>
+    <span>{{ "CONTACT_SUBMESSAGE" | translate }}</span>
     <app-contact-form></app-contact-form>
     <div class="arrow-up" (click)="scrollToTop()">
       <span class="arrow"></span>
