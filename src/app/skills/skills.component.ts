@@ -172,7 +172,7 @@ export class SkillsComponent implements OnInit, OnDestroy {
 
     this.intervalId = setInterval(() => {
       this.rotateLayout();
-    }, 5 * 1000);
+    }, 7 * 1000);
   }
 
   ngOnDestroy(): void {
