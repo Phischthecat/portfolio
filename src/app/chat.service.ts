@@ -1,4 +1,5 @@
 import { Injectable, signal } from '@angular/core';
+import { ChooseLangService } from './choose-lang.service';
 
 export interface Message {
   role: 'user' | 'bot';
@@ -11,7 +12,7 @@ export class ChatService {
 
   public messages = signal<Message[]>([]);
 
-  constructor() {
+  constructor(public lang: ChooseLangService) {
     this.loadContextPrompt();
   }
 
@@ -76,6 +77,11 @@ export class ChatService {
   }
 
   private systemInstruction() {
-    return this.prompt;
+    return (
+      this.prompt +
+      (this.lang.choosenLang === 'de'
+        ? '\nAntworte auf Deutsch.'
+        : '\nAnswer in English.')
+    );
   }
 }
