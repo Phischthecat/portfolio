@@ -29,5 +29,8 @@
   "SKILLS_TITLE": "Meine Skills",
   "START_SCREEN_TITLE_1": "Frontend",
   "START_SCREEN_TITLE_2": "Entwickler",
-  "START_SCREEN_CALL_TO_ACTION": "Nachricht senden"
+  "START_SCREEN_CALL_TO_ACTION": "Nachricht senden",
+  "CHAT_ERROR_MESSAGE": "Hoppla, da ist etwas schiefgelaufen.",
+  "CHAT_ERROR_OVERLOADED_MESSAGE": "Oha, gerade herrscht hier im Backend ein ziemliches Getümmel – wie in der Crunchtime beim Handball! 🤾‍♂️ Meine Verbindung zu Gemini macht gerade eine kurze Auszeit. Gib mir einen Moment zum Durchatmen und frag mich gleich nochmal!",
+  "CHAT_NO_ANSWER_MESSAGE": "Keine Antwort erhalten."
 }

@@ -1,5 +1,6 @@
 import { Injectable, signal } from '@angular/core';
 import { ChooseLangService } from './choose-lang.service';
+import { TranslateService } from '@ngx-translate/core';
 
 export interface Message {
   role: 'user' | 'bot';
@@ -12,7 +13,10 @@ export class ChatService {
 
   public messages = signal<Message[]>([]);
 
-  constructor(public lang: ChooseLangService) {
+  constructor(
+    public lang: ChooseLangService,
+    public translate: TranslateService
+  ) {
     this.loadContextPrompt();
   }
 
@@ -38,15 +42,19 @@ export class ChatService {
       });
       if (!response.ok) throw new Error('Proxy-Fehler: ' + response.status);
       const data = await response.json();
-      const text =
-        data?.candidates?.[0]?.content?.parts?.[0]?.text ||
-        'Keine Antwort erhalten.';
+      const noAnswer = this.translate.instant('CHAT_NO_ANSWER_MESSAGE');
+      const text = data?.candidates?.[0]?.content?.parts?.[0]?.text || noAnswer;
       this.messages.update((prev) => [...prev, { role: 'bot', text }]);
     } catch (error: any) {
+      const isOverloaded =
+        error.message.includes('503') || error.message.includes('429');
       console.error('Fehler beim Chat:', error);
+      const errorMessage = isOverloaded
+        ? this.translate.instant('CHAT_ERROR_OVERLOADED_MESSAGE')
+        : this.translate.instant('CHAT_ERROR_MESSAGE');
       this.messages.update((prev) => [
         ...prev,
-        { role: 'bot', text: 'Hoppla, da lief was schief.' },
+        { role: 'bot', text: errorMessage },
       ]);
     }
   }
