@@ -23,6 +23,7 @@ $fs-regular: 22px;
 $fs-lg: 30px;
 $fs-xl: 37px;
 $fs-headline: calc(20px + 6vw);
+$fs-headline-mobile: clamp($fs-regular, calc($fs-md + 4vw), 65px);
 $fs-headline1: clamp($fs-regular, calc($fs-sm + 3vw), 65px);
 $fs-headline2: clamp($fs-md, calc($fs-s + 3vw), 60px);
 $fs-headline3: clamp($fs-sm, calc($fs-xs + 2vw), 55px);
@@ -54,7 +55,10 @@ $br: 8px;
 $drop-shadow: drop-shadow(0 0 5px $primary_clr);
 
 //boxshadow
-$boxshadow: 0px 0px 2.2px rgba(0, 0, 0, 0.066),
-  0px 0px 5.3px rgba(0, 0, 0, 0.08), 0px 0px 10px rgba(0, 0, 0, 0.088),
-  0px 0px 17.9px rgba(0, 0, 0, 0.096), 0px 0px 33.4px rgba(0, 0, 0, 0.109),
+$boxshadow:
+  0px 0px 2.2px rgba(0, 0, 0, 0.066),
+  0px 0px 5.3px rgba(0, 0, 0, 0.08),
+  0px 0px 10px rgba(0, 0, 0, 0.088),
+  0px 0px 17.9px rgba(0, 0, 0, 0.096),
+  0px 0px 33.4px rgba(0, 0, 0, 0.109),
   0px 0px 80px rgba(0, 0, 0, 0.17);

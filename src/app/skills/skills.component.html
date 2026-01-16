@@ -1,7 +1,12 @@
 <div class="container" id="mySkills">
   <div class="wrapper">
     <h1>{{ "SKILLS_TITLE" | translate }}</h1>
-    <div class="bento-grid" (click)="onGridClick($event)">
+    <div
+      class="bento-grid"
+      (click)="onGridClick($event)"
+      (mouseenter)="stopRotate()"
+      (mouseleave)="startRotate()"
+    >
       <div
         *ngFor="let skill of skills"
         [id]="skill.id"

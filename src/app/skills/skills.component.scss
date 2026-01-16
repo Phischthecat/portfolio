@@ -29,7 +29,7 @@
       }
     }
 
-    // Desktop: 4 Spalten - 685px (4 * 155px + 3 * 15px + 20px padding)
+    // Desktop: 4 Spalten - 685px (4 * 155px (boxsize) + 3 * 15px (gap) + 20px (padding))
     .bento-grid {
       $padding: clamp(60px, 8vw, 90px);
       position: relative;
@@ -124,6 +124,7 @@
   }
 }
 
+// Tablet: 3 Spalten - 463px (3 * 145px (boxsize) + 3 * 15px (gap) + 18px (padding))
 @media (max-width: 800px) {
   .container {
     padding-bottom: 90px;
@@ -137,12 +138,6 @@
 
       .bento-item {
         padding: 18px;
-        border-radius: 14px;
-
-        &::before,
-        &::after {
-          border-radius: 14px;
-        }
 
         &:hover .icon {
           transform: translateY(-3px) scale(1.05);
@@ -161,6 +156,7 @@
   }
 }
 
+// Desktop: 2 Spalten - 252px (2 * 120px (boxsize) + 3 * 12px (gap) + 16px (padding))
 @media (max-width: 640px) {
   .container {
     padding-bottom: 80px;
@@ -169,28 +165,12 @@
       padding: 0 20px;
 
       .bento-grid {
-        width: 100%;
-        max-width: 304px;
+        width: 252px;
         min-height: 1000px;
-        margin-top: -60px;
       }
 
       .bento-item {
         padding: 16px;
-        border-radius: 12px;
-
-        &::before,
-        &::after {
-          border-radius: 12px;
-        }
-
-        &:hover {
-          box-shadow: 0 0 15px rgba(255, 153, 0, 0.12);
-        }
-
-        &:hover .icon {
-          transform: translateY(-3px) scale(1.05);
-        }
       }
 
       .icon {
@@ -208,12 +188,7 @@
 @media (max-width: 480px) {
   .container .wrapper {
     .bento-grid {
-      max-width: 280px;
       min-height: 950px;
-    }
-
-    .bento-item {
-      padding: 14px;
     }
 
     .icon {

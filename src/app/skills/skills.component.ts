@@ -26,6 +26,7 @@ type ScreenSize = 'mobile' | 'tablet' | 'desktop';
   standalone: false,
 })
 export class SkillsComponent implements OnInit, OnDestroy {
+  private secondsPerLayout = 4;
   private intervalId: any;
   private currentLayout = 0;
   screenSize: ScreenSize = 'desktop';
@@ -75,31 +76,32 @@ export class SkillsComponent implements OnInit, OnDestroy {
     ],
     [
       { id: 'angular', x: 0, y: 0, w: 1, h: 2 },
-      { id: 'typescript', x: 1, y: 0, w: 2, h: 2 },
-      { id: 'javascript', x: 3, y: 0, w: 1, h: 1 },
-      { id: 'firebase', x: 3, y: 1, w: 1, h: 1 },
-      { id: 'html', x: 0, y: 2, w: 1, h: 1 },
-      { id: 'css', x: 1, y: 2, w: 1, h: 1 },
-      { id: 'mysql', x: 2, y: 2, w: 1, h: 2 },
-      { id: 'git', x: 3, y: 2, w: 1, h: 1 },
+      { id: 'typescript', x: 1, y: 0, w: 2, h: 1 },
+      { id: 'javascript', x: 1, y: 1, w: 1, h: 1 },
+      { id: 'html', x: 2, y: 1, w: 1, h: 1 },
+      { id: 'firebase', x: 3, y: 0, w: 1, h: 2 },
+      { id: 'css', x: 0, y: 2, w: 2, h: 1 },
+      { id: 'mysql', x: 2, y: 2, w: 1, h: 1 },
+      { id: 'rest-api', x: 3, y: 2, w: 1, h: 1 },
+      { id: 'git', x: 1, y: 3, w: 1, h: 1 },
       { id: 'scrum', x: 0, y: 3, w: 1, h: 1 },
-      { id: 'docker', x: 1, y: 3, w: 1, h: 1 },
-      { id: 'figma', x: 3, y: 3, w: 1, h: 1 },
-    ],
-    [
-      { id: 'angular', x: 0, y: 0, w: 1, h: 1 },
-      { id: 'typescript', x: 1, y: 0, w: 1, h: 1 },
-      { id: 'firebase', x: 2, y: 0, w: 2, h: 2 },
-      { id: 'javascript', x: 0, y: 1, w: 1, h: 1 },
-      { id: 'html', x: 1, y: 1, w: 1, h: 1 },
-      { id: 'css', x: 0, y: 2, w: 1, h: 1 },
-      { id: 'mysql', x: 1, y: 2, w: 2, h: 1 },
-      { id: 'docker', x: 3, y: 2, w: 1, h: 1 },
-      { id: 'git', x: 0, y: 3, w: 1, h: 1 },
-      { id: 'scrum', x: 1, y: 3, w: 1, h: 1 },
       { id: 'figma', x: 2, y: 3, w: 1, h: 1 },
-      { id: 'rest-api', x: 3, y: 3, w: 1, h: 1 },
+      { id: 'docker', x: 3, y: 3, w: 1, h: 1 },
     ],
+    // [
+    //   { id: 'angular', x: 0, y: 0, w: 1, h: 1 },
+    //   { id: 'typescript', x: 1, y: 0, w: 1, h: 1 },
+    //   { id: 'firebase', x: 2, y: 0, w: 2, h: 2 },
+    //   { id: 'javascript', x: 0, y: 1, w: 1, h: 1 },
+    //   { id: 'html', x: 1, y: 1, w: 1, h: 1 },
+    //   { id: 'css', x: 0, y: 2, w: 1, h: 1 },
+    //   { id: 'mysql', x: 1, y: 2, w: 2, h: 1 },
+    //   { id: 'docker', x: 3, y: 2, w: 1, h: 1 },
+    //   { id: 'git', x: 0, y: 3, w: 1, h: 1 },
+    //   { id: 'scrum', x: 1, y: 3, w: 1, h: 1 },
+    //   { id: 'figma', x: 2, y: 3, w: 1, h: 1 },
+    //   { id: 'rest-api', x: 3, y: 3, w: 1, h: 1 },
+    // ],
   ];
 
   // Tablet Layouts (3 Spalten)
@@ -119,18 +121,32 @@ export class SkillsComponent implements OnInit, OnDestroy {
       { id: 'rest-api', x: 0, y: 5, w: 3, h: 1 },
     ],
     [
-      { id: 'typescript', x: 0, y: 0, w: 2, h: 1 },
-      { id: 'angular', x: 2, y: 0, w: 1, h: 1 },
-      { id: 'firebase', x: 0, y: 1, w: 1, h: 2 },
-      { id: 'javascript', x: 1, y: 1, w: 1, h: 1 },
-      { id: 'html', x: 2, y: 1, w: 1, h: 1 },
-      { id: 'css', x: 1, y: 2, w: 1, h: 1 },
-      { id: 'mysql', x: 2, y: 2, w: 1, h: 1 },
-      { id: 'git', x: 0, y: 3, w: 1, h: 1 },
-      { id: 'docker', x: 1, y: 3, w: 2, h: 1 },
-      { id: 'scrum', x: 0, y: 4, w: 1, h: 1 },
-      { id: 'figma', x: 1, y: 4, w: 1, h: 1 },
-      { id: 'rest-api', x: 2, y: 4, w: 1, h: 1 },
+      { id: 'angular', x: 0, y: 0, w: 2, h: 1 },
+      { id: 'typescript', x: 2, y: 0, w: 1, h: 1 },
+      { id: 'javascript', x: 0, y: 1, w: 1, h: 1 },
+      { id: 'firebase', x: 1, y: 1, w: 2, h: 1 },
+      { id: 'html', x: 0, y: 2, w: 2, h: 1 },
+      { id: 'mysql', x: 2, y: 2, w: 1, h: 2 },
+      { id: 'css', x: 0, y: 3, w: 1, h: 2 },
+      { id: 'figma', x: 1, y: 3, w: 1, h: 2 },
+      { id: 'docker', x: 2, y: 4, w: 1, h: 1 },
+      { id: 'git', x: 0, y: 5, w: 1, h: 1 },
+      { id: 'scrum', x: 1, y: 5, w: 1, h: 1 },
+      { id: 'rest-api', x: 2, y: 5, w: 1, h: 1 },
+    ],
+    [
+      { id: 'angular', x: 1, y: 0, w: 1, h: 1 },
+      { id: 'typescript', x: 2, y: 0, w: 1, h: 2 },
+      { id: 'firebase', x: 1, y: 1, w: 1, h: 1 },
+      { id: 'javascript', x: 0, y: 0, w: 1, h: 2 },
+      { id: 'html', x: 1, y: 2, w: 2, h: 1 },
+      { id: 'mysql', x: 2, y: 3, w: 1, h: 1 },
+      { id: 'css', x: 0, y: 2, w: 1, h: 1 },
+      { id: 'figma', x: 1, y: 3, w: 1, h: 1 },
+      { id: 'docker', x: 1, y: 4, w: 1, h: 1 },
+      { id: 'git', x: 0, y: 3, w: 1, h: 2 },
+      { id: 'scrum', x: 0, y: 5, w: 2, h: 1 },
+      { id: 'rest-api', x: 2, y: 4, w: 1, h: 2 },
     ],
   ];
 
@@ -170,15 +186,11 @@ export class SkillsComponent implements OnInit, OnDestroy {
     this.checkScreenSize();
     this.setupResizeListener();
 
-    this.intervalId = setInterval(() => {
-      this.rotateLayout();
-    }, 7 * 1000);
+    this.startRotate();
   }
 
   ngOnDestroy(): void {
-    if (this.intervalId) {
-      clearInterval(this.intervalId);
-    }
+    this.clearRotate();
   }
 
   private setupResizeListener(): void {
@@ -217,7 +229,7 @@ export class SkillsComponent implements OnInit, OnDestroy {
   getGridConfig(): { cellSize: number; gap: number; columns: number } {
     switch (this.screenSize) {
       case 'mobile':
-        return { cellSize: 140, gap: 12, columns: 2 };
+        return { cellSize: 120, gap: 12, columns: 2 };
       case 'tablet':
         return { cellSize: 145, gap: 14, columns: 3 };
       case 'desktop':
@@ -264,6 +276,23 @@ export class SkillsComponent implements OnInit, OnDestroy {
   rotateLayout(): void {
     const layouts = this.getCurrentLayouts();
     this.currentLayout = (this.currentLayout + 1) % layouts.length;
+  }
+
+  startRotate() {
+    this.intervalId = setInterval(() => {
+      this.rotateLayout();
+    }, this.secondsPerLayout * 1000);
+  }
+
+  stopRotate(): void {
+    this.clearRotate();
+    this.intervalId = null;
+  }
+
+  private clearRotate() {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
   }
 
   onGridClick(event: MouseEvent): void {
